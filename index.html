@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mamadou DIAKHABY - Data Engineer basé à Paris - Spécialiste pipelines ETL, Big Data et Cloud.">
-    <meta property="og:title" content="Mamadou DIAKHABY - Data Engineer">
-    <meta property="og:description" content="Data Engineer formé à la conception et industrialisation de pipelines ETL/ELT robustes">
-    <meta property="og:type" content="website">
-    <title>Mamadou DIAKHABY - Data Engineer</title>
+    <meta name="description" content="Mamadou DIAKHABY - Data Engineer | Pipelines ETL/ELT scalables & automatisés | Python, SQL, Airflow, DBT, Snowflake, AWS">
+    <title>Mamadou DIAKHABY - Data Engineer | Pipelines scalables & automatisés</title>
     <style>
         :root {
             --primary-color: #667eea;
             --secondary-color: #764ba2;
+            --accent-color: #5b6cee;
             --white: #ffffff;
-            --text-dark: #333333;
-            --light-gray: #f0f0f0;
+            --text-dark: #1f2937;
+            --text-medium: #4b5563;
+            --light-gray: #f5f3ff;
+            --border-gray: #e5e7eb;
+            --success: #10b981;
+            --card-bg: #6b7bd8;
         }
 
         * {
@@ -24,10 +26,10 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         html {
@@ -35,12 +37,12 @@
         }
 
         nav {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             backdrop-filter: blur(10px);
         }
 
@@ -48,16 +50,19 @@
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 2.5rem;
             flex-wrap: wrap;
+            padding: 0 1rem;
         }
 
         nav a {
             text-decoration: none;
-            color: var(--primary-color);
-            font-weight: 600;
+            color: var(--text-medium);
+            font-weight: 500;
             transition: color 0.3s;
             position: relative;
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
         }
 
         nav a::after {
@@ -67,7 +72,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--secondary-color);
+            background: var(--primary-color);
             transition: width 0.3s;
         }
 
@@ -78,18 +83,18 @@
 
         nav a:hover,
         nav a.active {
-            color: var(--secondary-color);
+            color: var(--primary-color);
         }
 
         section {
             padding: 4rem 2rem;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .hero {
             text-align: center;
-            padding: 6rem 2rem;
+            padding: 5rem 2rem 4rem;
             color: var(--white);
             min-height: 80vh;
             display: flex;
@@ -99,49 +104,64 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 3rem;
+            margin-bottom: 0.8rem;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1s forwards;
+            font-weight: 600;
+            letter-spacing: -0.02em;
         }
 
-        .hero .subtitle {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
+        .hero .role {
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1s 0.2s forwards;
-            font-weight: 300;
+            font-weight: 700;
         }
 
-        .hero .location {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
+        .hero .tagline {
+            font-size: 1.15rem;
+            margin-bottom: 0.8rem;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1s 0.3s forwards;
-            font-weight: 300;
+            font-weight: 400;
+            color: rgba(255,255,255,0.95);
+            max-width: 800px;
+            line-height: 1.6;
         }
 
-        .hero p {
-            font-size: 1.3rem;
+        .hero .location {
+            font-size: 1.05rem;
             margin-bottom: 2rem;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1s 0.4s forwards;
+            font-weight: 400;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .hero .cta-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s 0.5s forwards;
         }
 
         .btn {
             display: inline-block;
-            padding: 1rem 2rem;
+            padding: 0.9rem 2rem;
             border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s 0.6s forwards;
+            transition: all 0.3s;
+            font-size: 0.95rem;
         }
 
         .btn-primary {
@@ -150,73 +170,150 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
 
         .btn-secondary {
-            background: var(--primary-color);
+            background: transparent;
             color: var(--white);
+            border: 2px solid var(--white);
         }
 
         .btn-secondary:hover {
-            background: var(--secondary-color);
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.8rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s 0.6s forwards;
         }
 
         .white-section {
             background: var(--white);
             margin: 2rem auto;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
 
         h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            margin-bottom: 2.5rem;
             color: var(--primary-color);
             text-align: center;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
         .about-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1.8;
+            color: var(--text-dark);
         }
 
         .about-content p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 20px;
+            border-left: 4px solid var(--primary-color);
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .highlight-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .highlight-box li {
+            padding: 0.7rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        .highlight-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.1rem;
         }
 
         .experience-timeline {
-            max-width: 800px;
+            max-width: 900px;
             margin: 2rem auto;
         }
 
         .experience-item {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 10px;
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 20px;
             border-left: 4px solid var(--primary-color);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+        }
+
+        .experience-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .experience-item h3 {
             color: var(--primary-color);
             font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
         }
 
         .experience-item .company {
             font-weight: 600;
-            color: var(--secondary-color);
-            margin-bottom: 0.3rem;
+            color: var(--text-dark);
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
         }
 
         .experience-item .period {
-            color: #666;
+            color: var(--text-medium);
             font-size: 0.9rem;
             margin-bottom: 1rem;
+        }
+
+        .experience-item p,
+        .experience-item ul {
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .experience-item ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .experience-item li {
+            margin: 0.6rem 0;
         }
 
         .skills-grid {
@@ -229,20 +326,20 @@
         .skill-category {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: 20px;
             color: var(--white);
-            transition: transform 0.3s, box-shadow 0.3s;
-            will-change: transform;
+            transition: all 0.3s;
         }
 
         .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
         }
 
         .skill-category h3 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
         }
 
         .skill-category ul {
@@ -250,7 +347,7 @@
         }
 
         .skill-category li {
-            padding: 0.5rem 0;
+            padding: 0.6rem 0;
             border-bottom: 1px solid rgba(255,255,255,0.2);
             font-size: 0.95rem;
         }
@@ -259,62 +356,63 @@
             border-bottom: none;
         }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        .projects-section {
+            background: transparent;
         }
 
-        .project-card {
+        .project-featured {
             background: var(--white);
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            opacity: 0;
-            transform: translateY(30px);
-            will-change: transform, opacity;
-        }
-
-        .project-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-
-        .project-card.featured {
-            grid-column: 1 / -1;
-            max-width: 800px;
-            margin: 0 auto;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            margin: 2rem auto 3rem;
+            max-width: 1000px;
         }
 
         .project-header {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: var(--white);
-            padding: 2rem;
-        }
-
-        .project-header h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            padding: 3rem 2.5rem;
+            position: relative;
         }
 
         .project-badge {
             display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
+            background: rgba(255,255,255,0.25);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .project-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: white;
+            font-weight: 600;
+        }
+
+        .project-header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            font-weight: 400;
         }
 
         .project-body {
-            padding: 2rem;
+            padding: 2.5rem;
+        }
+
+        .project-section {
+            margin-bottom: 2rem;
+        }
+
+        .project-section h4 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
 
         .project-body ul {
@@ -323,30 +421,109 @@
         }
 
         .project-body li {
-            margin: 0.5rem 0;
+            margin: 0.7rem 0;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+
+        .impact-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            border-top: 3px solid var(--primary-color);
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-medium);
+            line-height: 1.4;
         }
 
         .project-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
+            gap: 0.6rem;
+            margin: 2rem 0;
         }
 
         .tag {
             background: var(--light-gray);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
             color: var(--primary-color);
             font-weight: 500;
         }
 
         .project-links {
-            margin-top: 1.5rem;
+            margin-top: 2rem;
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
+        }
+
+        .project-btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+        }
+
+        .project-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .other-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+        }
+
+        .project-card .project-header {
+            padding: 2rem;
+        }
+
+        .project-card .project-header h3 {
+            font-size: 1.4rem;
+        }
+
+        .project-card .project-body {
+            padding: 1.5rem 2rem 2rem;
         }
 
         .contact {
@@ -358,10 +535,19 @@
             color: var(--white);
         }
 
+        .contact-intro {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             margin-top: 2rem;
             flex-wrap: wrap;
         }
@@ -374,14 +560,15 @@
             border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
             background: var(--white);
             color: var(--primary-color);
+            font-size: 0.95rem;
         }
 
         .contact-link:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
 
         @keyframes fadeInUp {
@@ -397,26 +584,32 @@
 
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             color: var(--white);
             background: rgba(0, 0, 0, 0.2);
         }
 
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        footer a:hover {
+            opacity: 0.8;
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
-            .hero .subtitle {
-                font-size: 1.3rem;
+            .hero .role {
+                font-size: 1.6rem;
             }
 
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .hero .tagline {
+                font-size: 1rem;
             }
 
             nav ul {
@@ -424,15 +617,28 @@
             }
 
             section {
-                padding: 3rem 1rem;
+                padding: 3rem 1.5rem;
             }
 
-            .skills-grid {
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .skills-grid,
+            .other-projects {
                 grid-template-columns: 1fr;
             }
 
-            .project-card.featured {
-                grid-column: 1;
+            .project-header {
+                padding: 2rem 1.5rem;
+            }
+
+            .project-body {
+                padding: 1.5rem;
+            }
+
+            .impact-metrics {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -442,7 +648,7 @@
         <ul>
             <li><a href="#accueil" class="nav-link">Accueil</a></li>
             <li><a href="#a-propos" class="nav-link">À propos</a></li>
-            <li><a href="#experience" class="nav-link">Expérience</a></li>
+            <li><a href="#parcours" class="nav-link">Parcours</a></li>
             <li><a href="#competences" class="nav-link">Compétences</a></li>
             <li><a href="#projets" class="nav-link">Projets</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -451,50 +657,82 @@
 
     <section id="accueil" class="hero">
         <h1>Mamadou DIAKHABY</h1>
-        <p class="subtitle">Data Engineer</p>
-        <p class="location">📍 Paris, France</p>
-        <p>Data Engineer formé à la conception et industrialisation de pipelines ETL/ELT robustes</p>
-        <a href="#projets" class="btn btn-primary">Découvrir mes projets</a>
+        <p class="role">Data Engineer</p>
+        <p class="tagline">Data Engineer formé à la conception et industrialisation de pipelines ETL/ELT robustes, scalables & automatisés</p>
+        <p class="location">📍 Paris, Île-de-France, France</p>
+        <div class="status-badge">🎯 En recherche active de CDI</div>
+        <div class="cta-container">
+            <a href="#projets" class="btn btn-primary">Découvrir mon projet phare</a>
+            <a href="#contact" class="btn btn-secondary">Me contacter</a>
+        </div>
     </section>
 
     <section id="a-propos" class="white-section">
         <h2>À propos</h2>
         <div class="about-content">
             <p>
-                Data Engineer, j'aide les entreprises à transformer leurs données brutes en informations stratégiques grâce à des pipelines robustes, automatisés et scalables. Formé chez DataScientest, j'ai acquis une expertise pratique en ingestion multi-sources, modélisation SQL/NoSQL et orchestration avec Airflow/DBT.
+                <strong>Data Engineer : transformer vos données en valeur stratégique</strong>
             </p>
             <p>
-                Spécialisé dans le traitement distribué avec Apache Spark, l'orchestration de workflows et le déploiement d'infrastructures containerisées, je conçois des solutions data qui créent de la valeur métier mesurable.
+                Data Engineer, j'aide les entreprises à transformer leurs données brutes en informations stratégiques grâce à des pipelines robustes, automatisés et scalables. Formé chez DataScientest, j'ai développé une expertise pratique en ingestion multi-sources, modélisation SQL/NoSQL et orchestration avec Airflow et DBT.
             </p>
             <p>
-                Mon approche combine expertise technique (Python, SQL, PySpark, Kafka), automatisation DevOps (Docker, Kubernetes, CI/CD) et une attention particulière à la qualité et la fiabilité des données pour garantir des solutions pérennes et performantes.
+                Spécialisé dans le traitement distribué avec Apache Spark, l'orchestration de workflows complexes et le déploiement d'infrastructures containerisées, je conçois des solutions data qui génèrent une valeur métier mesurable et durable.
+            </p>
+            
+            <div class="highlight-box">
+                <h3>💡 Mon approche</h3>
+                <ul>
+                    <li><strong>Expertise technique complète</strong> : Python, SQL, PySpark, Kafka pour gérer des volumes importants et des flux de données en temps réel</li>
+                    <li><strong>Automatisation DevOps avancée</strong> : Docker, Kubernetes, CI/CD pour des déploiements fiables et reproductibles</li>
+                    <li><strong>Vision end-to-end des pipelines data</strong> : de l'ingestion (scraping, APIs, streaming) à l'exposition (API FastAPI, dashboards, monitoring)</li>
+                    <li><strong>Qualité et fiabilité des données</strong> : tests unitaires, validation rigoureuse et documentation exhaustive pour garantir des solutions pérennes</li>
+                </ul>
+            </div>
+
+            <p>
+                Ma force distinctive réside dans ma capacité à allier rigueur méthodologique issue de mon expérience en laboratoire scientifique (4 ans en analyse MOLP/MET), expertise technique moderne et automatisation DevOps pour créer des architectures data scalables et performantes qui répondent aux enjeux business.
             </p>
         </div>
     </section>
 
-    <section id="experience" class="white-section">
-        <h2>Expérience & Formation</h2>
+    <section id="parcours" class="white-section">
+        <h2>Parcours & Formation</h2>
         <div class="experience-timeline">
             <div class="experience-item">
-                <h3>💼 Analyste MOLP/MET de Niveau 3</h3>
-                <div class="company">ITGA Analytics, Arcueil</div>
-                <div class="period">Février 2022 - Présent</div>
-                <p>Analyse des matériaux de construction et filtres d'air pour la détection des fibres d'amiante à l'aide des Microscopes Optique (MOLP) et Électronique (MET). Rigueur analytique et respect des protocoles stricts applicables aux projets data.</p>
+                <h3>💼 Analyste MOLP/MET et Formateur</h3>
+                <div class="company">ITGA · CDI</div>
+                <div class="period">Février 2022 - Aujourd'hui · 3 ans 9 mois · Paris</div>
+                <p>Analyse de matériaux de construction et filtres d'air pour détection des fibres d'amiante via Microscopie Optique (MOLP) et Électronique (MET).</p>
+                <ul>
+                    <li><strong>Production & qualité</strong> : analyse de ~2 400 échantillons/an (200/mois) avec respect strict des protocoles ISO, taux de conformité >99%</li>
+                    <li><strong>Gestion de données complexes</strong> : traçabilité exhaustive de milliers d'échantillons, détection de patterns anormaux, reporting précis sous contraintes réglementaires</li>
+                    <li><strong>Formation & transmission</strong> : montée en compétence des nouveaux analystes sur protocoles techniques et administratifs</li>
+                </ul>
+                <p><em>Compétences transférables vers Data Engineering : rigueur méthodologique (protocoles stricts = code quality), analyse de données complexes (échantillons = datasets), gestion qualité (contrôles = tests unitaires), documentation exhaustive.</em></p>
             </div>
 
             <div class="experience-item">
                 <h3>🎓 Formation Data Engineer</h3>
-                <div class="company">DataScientest, Paris</div>
-                <div class="period">Juillet 2025 - Octobre 2025</div>
-                <p>Formation intensive axée sur ingestion, transformation, automatisation et déploiement de données. Projet de pipeline complet : SQL/NoSQL, Python, MongoDB, API FastAPI, Docker, Airflow, Prometheus/Grafana.</p>
-                <p><strong>Compétences acquises :</strong> Python, SQL, PySpark, Kafka, Airflow, DBT, Snowflake, Docker, Kubernetes, GitLab CI/CD, AWS (S3), Monitoring (Prometheus/Grafana)</p>
+                <div class="company">DataScientest · Paris</div>
+                <div class="period">Juillet 2025 - Octobre 2025 · 4 mois</div>
+                <p>Formation axée sur la conception et l'industrialisation de pipelines ETL/ELT robustes, de l'ingestion à la livraison des données.</p>
+                <p><strong>Réalisation de projets nécessitant l'utilisation de :</strong></p>
+                <ul>
+                    <li><strong>Langages de programmation</strong> : Python, Scala, SQL</li>
+                    <li><strong>Bases de données & Data Warehousing</strong> : MySQL, PostgreSQL, MongoDB, Cassandra</li>
+                    <li><strong>Big Data & Traitement distribué</strong> : Apache Spark (PySpark), Apache Kafka</li>
+                    <li><strong>ETL & Orchestration</strong> : Apache Airflow, DBT</li>
+                    <li><strong>Infrastructure & DevOps</strong> : Linux, Bash, Docker, Git, GitHub, GitLab, CI/CD</li>
+                    <li><strong>Cloud</strong> : AWS (S3), Azure</li>
+                </ul>
             </div>
 
             <div class="experience-item">
-                <h3>🎓 Master 1 - RSE</h3>
-                <div class="company">Université de Versailles, Paris</div>
+                <h3>🎓 Master - RSE</h3>
+                <div class="company">Université de Versailles Saint-Quentin-en-Yvelines (UVSQ) · Paris</div>
                 <div class="period">2018 - 2019</div>
-                <p>Formation axée sur la Responsabilité Sociétale des Entreprises et le développement durable.</p>
+                <p>Formation axée sur la RSE et le développement durable. Conduite des audits (internes et externes), la gouvernance et gestion des risques, gestion des documents d'évaluation de risques, veille réglementaire et technique. Principes de certification : normes ISO 9001 (services) et 26000 (RSE).</p>
             </div>
 
             <div class="experience-item">
@@ -578,62 +816,86 @@
                 <ul>
                     <li>FastAPI</li>
                     <li>POO (Programmation Orientée Objet)</li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <h3>🤖 Machine Learning & DataViz</h3>
-                <ul>
-                    <li>Machine Learning (ML Ops)</li>
-                    <li>Matplotlib</li>
+                    <li>scikit-learn</li>
+                    <li>CamemBERT</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section id="projets">
-        <h2 style="color: white;">Projet Principal</h2>
-        <div class="projects-grid">
-            <div class="project-card featured">
-                <div class="project-header">
-                    <h3>🎯 Pipeline d'Analyse de Satisfaction Client</h3>
-                    <p>Showroom Privé - Projet de formation DataScientest</p>
-                    <div class="project-badge">⭐ PROJET PHARE</div>
+    <section id="projets" class="projects-section">
+        <h2 style="color: white;">Projet Phare</h2>
+        
+        <div class="project-featured">
+            <div class="project-header">
+                <div class="project-badge">⭐ PROJET PRINCIPAL</div>
+                <h3>🎯 Pipeline d'Analyse de Satisfaction Client</h3>
+                <p class="subtitle">ShowroomPrivé · Projet de formation DataScientest</p>
+            </div>
+            
+            <div class="project-body">
+                <div class="project-section">
+                    <h4>🎯 Contexte & Challenge</h4>
+                    <p>Concevoir un pipeline complet d'analyse de satisfaction client e-commerce, de la collecte web à la prédiction ML, avec exposition API et dashboard décisionnel temps réel. <strong>Objectif : analyser la satisfaction client pour détecter les points d'amélioration du service après-vente de ShowroomPrivé.</strong></p>
                 </div>
-                <div class="project-body">
-                    <p><strong>Objectif :</strong> Analyser, modéliser et visualiser la satisfaction client à partir de plus de 20 000 avis réels collectés sur Showroom Privé via un pipeline complet de bout en bout.</p>
-                    
-                    <h4 style="color: var(--primary-color); margin-top: 1.5rem; margin-bottom: 0.5rem;">🏗️ Architecture complète</h4>
-                    <p>Pipeline end-to-end : <strong>MongoDB → Airflow → MySQL → FastAPI → Prometheus/Grafana</strong></p>
-                    <ul>
-                        <li><strong>Ingestion automatisée :</strong> Migration des données brutes depuis MongoDB vers MySQL avec orchestration Airflow</li>
-                        <li><strong>Modélisation relationnelle :</strong> Schéma SQL optimisé avec scripts de transformation et tests de qualité des données</li>
-                        <li><strong>Machine Learning :</strong> Pipeline d'analyse de sentiments (TF-IDF + Régression Logistique, RandomForest, SVM, CamemBERT) avec réentraînement automatique</li>
-                        <li><strong>API REST production-ready :</strong> FastAPI avec documentation Swagger (endpoints /predict, /stats, health check)</li>
-                        <li><strong>Containerisation complète :</strong> Architecture Docker multi-services (MySQL, MongoDB, Airflow, API, monitoring)</li>
-                        <li><strong>Observabilité :</strong> Stack complète Prometheus + Grafana + StatsD pour métriques temps réel</li>
-                    </ul>
 
-                    <h4 style="color: var(--primary-color); margin-top: 1.5rem; margin-bottom: 0.5rem;">🔧 Stack technique & DevOps</h4>
+                <div class="project-section">
+                    <h4>🏗️ Architecture Complète & Pipeline ETL</h4>
+                    <p><strong>Pipeline end-to-end :</strong> MongoDB → Airflow → MySQL → FastAPI → Prometheus/Grafana</p>
                     <ul>
-                        <li><strong>Data Engineering :</strong> Pipeline ETL modulaire avec code Python structuré (src/ingestion, src/transform, src/utils)</li>
-                        <li><strong>Orchestration :</strong> DAGs Airflow pour automatisation complète des traitements</li>
-                        <li><strong>Qualité du code :</strong> Black (formatage), Flake8 (linting), Pytest (tests unitaires)</li>
-                        <li><strong>CI/CD :</strong> GitHub Actions (build, tests, staging automatisés)</li>
-                        <li><strong>Sauvegarde & Restauration :</strong> Scripts automatisés MySQL (mysqldump) et MongoDB (mongodump)</li>
-                        <li><strong>Documentation :</strong> README technique complet, ERD, architecture diagrams, OpenAPI/Swagger</li>
+                        <li><strong>Ingestion automatisée</strong> : Scraping 20 259 avis (BeautifulSoup) + migration des données brutes depuis MongoDB vers MySQL avec orchestration Airflow (98,7% d'intégrité des données)</li>
+                        <li><strong>Modélisation relationnelle</strong> : Schéma SQL optimisé avec scripts de transformation et tests de qualité des données</li>
+                        <li><strong>Machine Learning</strong> : Pipeline d'analyse de sentiments (TF-IDF + Régression Logistique, RandomForest, SVM, CamemBERT) avec réentraînement automatique - F1-score = 0.92</li>
+                        <li><strong>API REST production-ready</strong> : FastAPI avec documentation Swagger (endpoints /predict, /stats, health check) - latence < 200 ms</li>
+                        <li><strong>Orchestration Airflow</strong> : DAG automatisé 7 tâches (scraping → cleaning → aggregation → MongoDB → reporting → alertes → ML)</li>
+                        <li><strong>Containerisation complète</strong> : Architecture Docker multi-services (MySQL, MongoDB, Airflow, API, monitoring)</li>
+                        <li><strong>Observabilité</strong> : Stack complète Prometheus + Grafana + StatsD pour métriques temps réel et alerting automatique</li>
                     </ul>
+                </div>
 
-                    <h4 style="color: var(--primary-color); margin-top: 1.5rem; margin-bottom: 0.5rem;">📊 Résultats & Impact</h4>
+                <div class="project-section">
+                    <h4>🔧 Qualité & DevOps</h4>
                     <ul>
-                        <li>✅ <strong>20 000+ avis clients</strong> traités et analysés automatiquement</li>
-                        <li>✅ <strong>Réduction de 75%</strong> du temps de traitement manuel grâce à l'automatisation</li>
-                        <li>✅ <strong>Pipeline production-ready</strong> : reproductible, testé, documenté et monitoré</li>
-                        <li>✅ <strong>API REST déployée</strong> avec prédictions ML accessibles via endpoints REST</li>
-                        <li>✅ <strong>Infrastructure scalable</strong> containerisée avec Docker Compose</li>
-                        <li>✅ <strong>Monitoring temps réel</strong> avec dashboards Grafana et alerting Prometheus</li>
+                        <li><strong>Code structuré</strong> : Architecture modulaire Python (src/ingestion, src/transform, src/utils)</li>
+                        <li><strong>Tests & Qualité</strong> : Black (formatage), Flake8 (linting), Pytest (tests unitaires, 87% couverture)</li>
+                        <li><strong>CI/CD</strong> : GitHub Actions (build, tests, staging automatisés)</li>
+                        <li><strong>Sauvegarde & Restauration</strong> : Scripts automatisés MySQL (mysqldump) et MongoDB (mongodump)</li>
+                        <li><strong>Documentation</strong> : README technique complet, ERD, architecture diagrams, OpenAPI/Swagger</li>
                     </ul>
+                </div>
 
+                <div class="project-section">
+                    <h4>💼 Résultats & Impact</h4>
+                    <div class="impact-metrics">
+                        <div class="metric-card">
+                            <div class="metric-value">20 000+</div>
+                            <div class="metric-label">avis clients traités et analysés automatiquement</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">75%</div>
+                            <div class="metric-label">Réduction du temps de traitement manuel grâce à l'automatisation</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">✅</div>
+                            <div class="metric-label">Pipeline production-ready : reproductible, testé, documenté et monitoré</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">✅</div>
+                            <div class="metric-label">API REST déployée avec prédictions ML accessibles via endpoints REST</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">✅</div>
+                            <div class="metric-label">Infrastructure scalable containerisée avec Docker Compose</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">✅</div>
+                            <div class="metric-label">Monitoring temps réel avec dashboards Grafana et alerting Prometheus</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h4>🛠️ Stack Technique</h4>
                     <div class="project-tags">
                         <span class="tag">Python</span>
                         <span class="tag">SQL (MySQL)</span>
@@ -650,17 +912,21 @@
                         <span class="tag">Pytest</span>
                         <span class="tag">CI/CD</span>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Diakhaby-data/Projet_satisfaction" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">📦 Voir le projet complet</a>
-                        <a href="https://github.com/Diakhaby-data?tab=repositories" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">💻 Tous mes repos</a>
-                    </div>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://github.com/Diakhaby-data/Projet_satisfaction" class="project-btn" target="_blank" rel="noopener noreferrer">📦 Voir le projet complet</a>
+                    <a href="https://github.com/Diakhaby-data" class="project-btn" target="_blank" rel="noopener noreferrer">💻 Tous mes repos</a>
                 </div>
             </div>
+        </div>
 
+        <h2 style="color: white; margin-top: 4rem;">Autres Projets</h2>
+        <div class="other-projects">
             <div class="project-card">
                 <div class="project-header">
-                    <h3>Streaming Data Pipeline</h3>
-                    <p>Traitement temps réel avec Kafka & Monitoring</p>
+                    <h3>⚡ Streaming Data Pipeline</h3>
+                    <p class="subtitle">Traitement temps réel avec Kafka & Monitoring</p>
                 </div>
                 <div class="project-body">
                     <p>Architecture de streaming pour ingestion et traitement temps réel de flux de données avec Apache Kafka. Intégration avec Spark Streaming, stockage dans Cassandra et monitoring complet avec Prometheus/Grafana.</p>
@@ -672,15 +938,15 @@
                         <span class="tag">Grafana</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Diakhaby-data" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://github.com/Diakhaby-data" class="project-btn" target="_blank" rel="noopener noreferrer">GitHub</a>
                     </div>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3>Data Warehouse Snowflake</h3>
-                    <p>Architecture moderne avec DBT</p>
+                    <h3>❄️ Data Warehouse Snowflake</h3>
+                    <p class="subtitle">Architecture moderne avec DBT</p>
                 </div>
                 <div class="project-body">
                     <p>Conception d'un data warehouse moderne sur Snowflake avec modélisation dimensionnelle. Transformations et tests de qualité avec DBT, orchestration Airflow et documentation automatisée.</p>
@@ -691,15 +957,15 @@
                         <span class="tag">Airflow</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Diakhaby-data" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://github.com/Diakhaby-data" class="project-btn" target="_blank" rel="noopener noreferrer">GitHub</a>
                     </div>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <h3>Data Lake sur AWS</h3>
-                    <p>Infrastructure cloud scalable</p>
+                    <h3>☁️ Data Lake sur AWS</h3>
+                    <p class="subtitle">Infrastructure cloud scalable</p>
                 </div>
                 <div class="project-body">
                     <p>Déploiement d'un data lake sur AWS avec stockage S3, gestion des formats de données (Parquet, JSON), et automatisation des pipelines d'ingestion avec CI/CD GitLab.</p>
@@ -710,7 +976,7 @@
                         <span class="tag">GitLab CI/CD</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/Diakhaby-data" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://github.com/Diakhaby-data" class="project-btn" target="_blank" rel="noopener noreferrer">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -718,8 +984,11 @@
     </section>
 
     <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 2rem;">En recherche active d'opportunités en tant que Data Engineer. N'hésitez pas à me contacter !</p>
+        <h2>Me Contacter</h2>
+        <div class="contact-intro">
+            <p><strong>🎯 En recherche active d'un CDI Data Engineer</strong></p>
+            <p>Je suis disponible immédiatement pour échanger sur vos projets data et discuter de la manière dont je peux contribuer à vos enjeux de Data Engineering.</p>
+        </div>
         <div class="contact-links">
             <a href="mailto:diakhaby14@gmail.com" class="contact-link">
                 📧 Email
@@ -730,42 +999,21 @@
             <a href="https://github.com/Diakhaby-data" class="contact-link" target="_blank" rel="noopener noreferrer">
                 💻 GitHub
             </a>
-            <a href="CV_Mamadou_Diakhaby_Data_Engineer.pdf" class="contact-link" download>
+            <a href="#" class="contact-link" onclick="alert('CV disponible sur demande via email ou LinkedIn'); return false;">
                 📄 Télécharger mon CV
             </a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Mamadou DIAKHABY - Data Engineer basé à Paris. Tous droits réservés.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-            <a href="mailto:diakhaby14@gmail.com" style="color: white; text-decoration: none;">diakhaby14@gmail.com</a>
+        <p>&copy; 2025 Mamadou DIAKHABY - Data Engineer | Pipelines ETL/ELT scalables & automatisés</p>
+        <p style="margin-top: 0.8rem; font-size: 0.95rem;">
+            📍 Paris, Île-de-France, France | 
+            <a href="mailto:diakhaby14@gmail.com">diakhaby14@gmail.com</a>
         </p>
     </footer>
 
     <script>
-        // Intersection Observer pour animer les cartes de projets au scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 150);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.project-card').forEach(card => {
-            observer.observe(card);
-        });
-
-        // Gestion de la navigation active
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.nav-link');
 
@@ -773,7 +1021,6 @@
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
                 if (window.scrollY >= (sectionTop - 200)) {
                     current = section.getAttribute('id');
                 }
@@ -790,7 +1037,6 @@
         window.addEventListener('scroll', updateActiveNav);
         updateActiveNav();
 
-        // Smooth scroll pour les liens d'ancrage
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -802,6 +1048,30 @@
                     });
                 }
             });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.project-card, .experience-item, .skill-category').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s, transform 0.6s';
+            observer.observe(el);
         });
     </script>
 </body>
