@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mamadou DIAKHABY - Data Engineer | Pipelines ETL/ELT scalables & automatisés">
-    <title>Mamadou DIAKHABY - Data Engineer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Mamadou DIAKHABY, Data Engineer : conception de pipelines ETL/ELT robustes, automatisés et testés, de l'ingestion au dashboard.">
+
+    <meta property="og:title" content="Mamadou DIAKHABY, Data Engineer">
+    <meta property="og:description" content="Conception de pipelines ETL/ELT robustes, automatisés et testés, de l'ingestion au dashboard.">
+    <meta property="og:image" content="https://diakhaby-data.github.io/portrait.png">
+    <meta property="og:url" content="https://diakhaby-data.github.io/">
+    <meta property="og:type" content="profile">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>Mamadou DIAKHABY, Data Engineer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%23667eea'/><text x='50' y='67' font-family='system-ui,sans-serif' font-size='42' font-weight='700' text-anchor='middle' fill='white'>MD</text></svg>">
     <style>
         :root {
             --primary: #667eea;
@@ -62,8 +70,8 @@
         nav a:hover::after, nav a.active::after { width: 100%; }
         nav a:hover, nav a.active { color: var(--primary); }
         section { padding: 4rem 2rem; max-width: 1100px; margin: 0 auto; }
-        
-        /* Hero Section - Optimisée pour portrait à gauche */
+
+        /* Hero */
         .hero {
             text-align: center;
             padding: 5rem 2rem 4rem;
@@ -75,8 +83,6 @@
             align-items: center;
             position: relative;
         }
-        
-        /* Container du header avec portrait à gauche */
         .hero-header {
             display: flex;
             align-items: center;
@@ -88,8 +94,6 @@
             width: 100%;
             max-width: 900px;
         }
-        
-        /* Portrait agrandi et positionné à gauche */
         .hero-portrait {
             width: 200px;
             height: 200px;
@@ -105,8 +109,6 @@
             top: 50%;
             transform: translateY(-60%);
         }
-        
-        /* Container du nom centré */
         .hero-title-container {
             flex: 1;
             display: flex;
@@ -115,7 +117,6 @@
             padding-left: 230px;
             margin-right: 230px;
         }
-        
         .hero h1 {
             font-size: 3rem;
             margin: 0;
@@ -125,7 +126,6 @@
             text-align: center;
             white-space: nowrap;
         }
-        
         .hero .role {
             font-size: 2.2rem;
             margin-bottom: 1.2rem;
@@ -146,6 +146,7 @@
             margin-bottom: 2rem;
             opacity: 0;
             animation: fadeInUp 1s 0.4s forwards;
+            opacity: 0.9;
         }
         .hero .cta-container {
             display: flex;
@@ -192,6 +193,7 @@
             margin-bottom: 1.8rem;
             opacity: 0;
             animation: fadeInUp 1s 0.6s forwards;
+            letter-spacing: 0.02em;
         }
         .white-section {
             background: var(--white);
@@ -228,7 +230,7 @@
             position: relative;
             line-height: 1.7;
         }
-        .highlight-box li:before {
+        .highlight-box li::before {
             content: "✓";
             position: absolute;
             left: 0;
@@ -280,7 +282,7 @@
             transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(0,0,0,0.2);
         }
-        .skill-category h3 { margin-bottom: 1.2rem; font-size: 1.2rem; font-weight: 600; }
+        .skill-category h3 { margin-bottom: 1.2rem; font-size: 1.1rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; }
         .skill-category ul { list-style: none; }
         .skill-category li {
             padding: 0.6rem 0;
@@ -310,12 +312,21 @@
             font-size: 0.8rem;
             margin-bottom: 1rem;
             font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
         .project-header h3 { font-size: 1.8rem; margin-bottom: 0.8rem; color: white; font-weight: 600; }
         .project-header .subtitle { font-size: 1.1rem; opacity: 0.95; }
         .project-body { padding: 2.5rem; }
         .project-section { margin-bottom: 2rem; }
-        .project-section h4 { color: var(--primary); font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600; }
+        .project-section h4 {
+            color: var(--primary);
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
         .project-body ul { margin: 1rem 0; padding-left: 1.5rem; }
         .project-body li { margin: 0.7rem 0; line-height: 1.7; }
         .impact-metrics {
@@ -333,15 +344,17 @@
         }
         .metric-value { font-size: 1.8rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
         .metric-label { font-size: 0.85rem; color: var(--medium); line-height: 1.4; }
-        
-        /* Galerie d'images */
+
+        /* Galerie */
         .project-gallery { margin: 3rem 0 2rem; }
         .project-gallery h4 {
             color: var(--primary);
-            font-size: 1.3rem;
+            font-size: 1.05rem;
             margin-bottom: 1.5rem;
             font-weight: 600;
             text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
         }
         .gallery-grid {
             display: grid;
@@ -357,14 +370,14 @@
             cursor: pointer;
             position: relative;
         }
-        .gallery-item:hover {
+        .gallery-item:hover,
+        .gallery-item:focus-visible {
             transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(102,126,234,0.3);
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
         }
-        .gallery-item.full-width {
-            grid-column: 1 / -1;
-        }
-        
+        .gallery-item.full-width { grid-column: 1 / -1; }
         .gallery-item img {
             width: 100%;
             display: block;
@@ -372,53 +385,28 @@
             padding: 1.5rem;
             object-fit: contain;
         }
-        
-        /* Dashboard satisfaction (943×746, ratio 1.26:1) - Paysage standard */
-        .gallery-item.standard-dashboard img {
-            height: 450px;
-            object-fit: contain;
-            padding: 1.5rem;
-        }
-        
-        /* Prometheus (1909×619, ratio 3.08:1) - Ultra-panoramique */
-        .gallery-item.ultra-wide-dashboard img {
-            height: 350px;
-            object-fit: contain;
-            padding: 1.5rem;
-        }
-        
-        /* Grafana (1917×733, ratio 2.61:1) - Très panoramique */
-        .gallery-item.wide-dashboard img {
-            height: 420px;
-            object-fit: contain;
-            padding: 1.5rem;
-        }
-        
-        /* API et Taux de prédiction - Petites images */
-        .gallery-item.small-item img {
-            height: 320px;
-            object-fit: contain;
-            padding: 1rem;
-        }
-        
+        .gallery-item.standard-dashboard img { height: 450px; object-fit: contain; padding: 1.5rem; }
+        .gallery-item.ultra-wide-dashboard img { height: 350px; object-fit: contain; padding: 1.5rem; }
+        .gallery-item.wide-dashboard img { height: 420px; object-fit: contain; padding: 1.5rem; }
+        .gallery-item.small-item img { height: 320px; object-fit: contain; padding: 1rem; }
         .gallery-caption {
-            padding: 1rem 1.5rem;
+            padding: 0.9rem 1.5rem;
             text-align: center;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            color: var(--medium);
             background: white;
             border-top: 1px solid rgba(102,126,234,0.1);
+            letter-spacing: 0.01em;
         }
-        
+
         /* Modal */
         .modal {
             display: none;
             position: fixed;
             z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
             background-color: rgba(0,0,0,0.95);
             animation: fadeIn 0.3s;
         }
@@ -428,8 +416,7 @@
             max-width: 90%;
             max-height: 90%;
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             transform: translate(-50%, -50%);
             animation: zoomIn 0.3s;
         }
@@ -437,19 +424,18 @@
             text-align: center;
             color: white;
             padding: 0.8rem 2rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
             position: absolute;
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             background: rgba(0,0,0,0.8);
             border-radius: 10px;
-            font-weight: 600;
+            font-weight: 500;
         }
         .close-modal {
             position: absolute;
-            top: 20px;
-            right: 35px;
+            top: 20px; right: 35px;
             color: white;
             font-size: 40px;
             font-weight: bold;
@@ -459,17 +445,16 @@
         .close-modal:hover { color: #bbb; }
         @keyframes zoomIn {
             from { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
-            to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            to   { transform: translate(-50%, -50%) scale(1);   opacity: 1; }
         }
         @keyframes fadeIn {
             from { opacity: 0; }
-            to { opacity: 1; }
+            to   { opacity: 1; }
         }
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            to   { opacity: 1; transform: translateY(0); }
         }
-        
         .project-tags {
             display: flex;
             flex-wrap: wrap;
@@ -498,7 +483,7 @@
         }
         .project-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 20px rgba(102,126,234,0.4);
         }
         .other-projects {
             display: grid;
@@ -523,12 +508,13 @@
         .contact { text-align: center; color: var(--white); }
         .contact h2 { color: var(--white); }
         .contact-intro {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             margin-bottom: 3rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.7;
+            line-height: 1.8;
+            opacity: 0.95;
         }
         .contact-links {
             display: flex;
@@ -558,89 +544,39 @@
             text-align: center;
             padding: 2.5rem 2rem;
             color: var(--white);
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0,0,0,0.2);
         }
-        footer a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
+        footer a { color: white; text-decoration: none; transition: opacity 0.3s; }
         footer a:hover { opacity: 0.8; }
-        
+
+        /* Classes remplaçant les anciens styles inline */
+        .section-title-light { color: var(--white); }
+        .section-title-spaced { margin-top: 4rem; }
+        .footer-meta { margin-top: 0.8rem; font-size: 0.9rem; opacity: 0.85; }
+
         @media (max-width: 1024px) {
-            .hero-portrait {
-                width: 170px;
-                height: 170px;
-                left: -30px;
-            }
-            .hero-title-container {
-                padding-left: 200px;
-                margin-right: 200px;
-            }
-            .hero h1 {
-                font-size: 3rem;
-            }
+            .hero-portrait { width: 170px; height: 170px; left: -30px; }
+            .hero-title-container { padding-left: 200px; margin-right: 200px; }
+            .hero h1 { font-size: 3rem; }
         }
-        
         @media (max-width: 768px) {
-            .hero-header { 
-                flex-direction: column; 
-                gap: 1.5rem;
-                align-items: center;
-            }
-            .hero-portrait { 
-                width: 180px; 
-                height: 180px;
-                position: static;
-                transform: none;
-            }
-            .hero-title-container {
-                padding-left: 0;
-                margin-right: 0;
-                width: 100%;
-            }
-            .hero h1 { 
-                font-size: 2.2rem;
-                white-space: normal;
-            }
+            .hero-header { flex-direction: column; gap: 1.5rem; align-items: center; }
+            .hero-portrait { width: 180px; height: 180px; position: static; transform: none; }
+            .hero-title-container { padding-left: 0; margin-right: 0; width: 100%; }
+            .hero h1 { font-size: 2.2rem; white-space: normal; }
             .hero .role { font-size: 1.6rem; }
             .hero .tagline { font-size: 1rem; }
             nav ul { gap: 1rem; }
             section { padding: 3rem 1.5rem; }
             h2 { font-size: 1.8rem; }
             .skills-grid, .other-projects { grid-template-columns: 1fr; }
-            
-            .gallery-grid { 
-                grid-template-columns: 1fr;
-                gap: 1.5rem; 
-            }
-            .gallery-item.full-width { 
-                grid-column: 1; 
-            }
-            
-            /* Mobile : réduction proportionnelle des hauteurs */
-            .gallery-item.standard-dashboard img {
-                height: 320px;
-                padding: 1rem;
-            }
-            .gallery-item.ultra-wide-dashboard img {
-                height: 250px;
-                padding: 1rem;
-            }
-            .gallery-item.wide-dashboard img {
-                height: 300px;
-                padding: 1rem;
-            }
-            .gallery-item.small-item img {
-                height: 280px;
-                padding: 0.8rem;
-            }
-            
-            .gallery-caption {
-                padding: 0.8rem 1rem;
-                font-size: 0.85rem;
-            }
-            
+            .gallery-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .gallery-item.full-width { grid-column: 1; }
+            .gallery-item.standard-dashboard img { height: 320px; padding: 1rem; }
+            .gallery-item.ultra-wide-dashboard img { height: 250px; padding: 1rem; }
+            .gallery-item.wide-dashboard img { height: 300px; padding: 1rem; }
+            .gallery-item.small-item img { height: 280px; padding: 0.8rem; }
+            .gallery-caption { padding: 0.8rem 1rem; font-size: 0.85rem; }
             .project-header { padding: 2rem 1.5rem; }
             .project-body { padding: 1.5rem; }
             .impact-metrics { grid-template-columns: 1fr; }
@@ -648,503 +584,573 @@
             .close-modal { top: 10px; right: 15px; font-size: 30px; }
             .modal-caption { font-size: 0.9rem; padding: 0.5rem 1rem; bottom: 10px; }
         }
-        
         @media (max-width: 480px) {
-            .hero-portrait {
-                width: 150px;
-                height: 150px;
-            }
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            .hero .role {
-                font-size: 1.4rem;
-            }
+            .hero-portrait { width: 150px; height: 150px; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero .role { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
-    <div id="imageModal" class="modal">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modalImage">
+    <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-label="Visualisation agrandie">
+        <span class="close-modal" role="button" tabindex="0" aria-label="Fermer">&times;</span>
+        <img class="modal-content" id="modalImage" alt="">
         <div class="modal-caption" id="modalCaption"></div>
     </div>
 
     <nav>
         <ul>
-            <li><a href="#accueil" class="nav-link">Accueil</a></li>
-            <li><a href="#a-propos" class="nav-link">À propos</a></li>
-            <li><a href="#parcours" class="nav-link">Parcours</a></li>
+            <li><a href="#accueil"     class="nav-link">Accueil</a></li>
+            <li><a href="#a-propos"    class="nav-link">À propos</a></li>
+            <li><a href="#parcours"    class="nav-link">Parcours</a></li>
             <li><a href="#competences" class="nav-link">Compétences</a></li>
-            <li><a href="#projets" class="nav-link">Projets</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><a href="#projets"     class="nav-link">Projets</a></li>
+            <li><a href="#contact"     class="nav-link">Contact</a></li>
         </ul>
     </nav>
 
-    <section id="accueil" class="hero">
-        <div class="hero-header">
-            <img src="https://diakhaby-data.github.io/portrait.png" alt="Mamadou DIAKHABY" class="hero-portrait" onerror="this.style.display='none'">
-            <div class="hero-title-container">
-                <h1>Mamadou DIAKHABY</h1>
-            </div>
-        </div>
-        <p class="role">Data Engineer</p>
-        <p class="tagline">Ingénieur de données formé à la conception et industrialisation<br>de pipelines ETL/ELT robustes, scalables & automatisés.</p>
-        <p class="location">📍 Paris, Île-de-France, France</p>
-        <div class="status-badge">🎯 En recherche de CDI</div>
-        <div class="cta-container">
-            <a href="#projets" class="btn btn-primary">Découvrir mon projet phare</a>
-            <a href="#contact" class="btn btn-secondary">Me contacter</a>
-        </div>
-    </section>
-
-    <section id="a-propos" class="white-section">
-        <h2>À propos</h2>
-        <div class="about-content">
-            <p><strong>🎯 𝗠𝗼𝗻 𝗼𝗯𝗷𝗲𝗰𝘁𝗶𝗳 : contribuer à transformer vos données en valeur stratégique.</strong></p>
-            <p>Data Engineer, j'aide les entreprises à transformer leurs données brutes en informations stratégiques grâce à des pipelines robustes, automatisés et scalables. Formé chez Mines Paris – PLS Executive Education en partenariat avec DataScientest, j'ai développé une expertise pratique en ingestion multi-sources, modélisation SQL/NoSQL et orchestration avec Airflow et DBT.</p>
-            <p>Spécialisé dans le traitement distribué avec Apache Spark, l'orchestration de workflows complexes et le déploiement d'infrastructures containerisées, je conçois des solutions data qui génèrent une valeur métier mesurable et durable.</p>
-            
-            <div class="highlight-box">
-                <h3>💡 Mon approche</h3>
-                <ul>
-                    <li><strong>Expertise technique complète</strong> : Python, SQL, PySpark, Kafka pour gérer des volumes importants et des flux de données en temps réel.</li>
-                    <li><strong>Automatisation DevOps avancée</strong> : Docker, Kubernetes, CI/CD pour des déploiements fiables et reproductibles.</li>
-                    <li><strong>Vision end-to-end des pipelines data</strong> : de l'ingestion (scraping, APIs, streaming) à l'exposition (API FastAPI, dashboards, monitoring).</li>
-                    <li><strong>Qualité et fiabilité des données</strong> : tests unitaires, validation rigoureuse et documentation exhaustive pour garantir des solutions pérennes.</li>
-                </ul>
-            </div>
-
-            <p>Ma force distinctive réside dans ma capacité à allier rigueur méthodologique issue de mon expérience en laboratoire scientifique (4 ans en analyse MOLP/MET), expertise technique moderne et automatisation DevOps pour créer des architectures data scalables et performantes qui répondent aux enjeux business.</p>
-        </div>
-    </section>
-
-    <section id="parcours" class="white-section">
-        <h2>Parcours & Formation</h2>
-        <div class="experience-timeline">
-            <div class="experience-item">
-                <h3>💼 Analyste MOLP/MET et Formateur</h3>
-                <div class="company">ITGA · CDI</div>
-                <div class="period">Février 2022 - Aujourd'hui · 4 ans · Paris</div>
-                <p>Analyse de matériaux de construction et filtres d'air pour détection des fibres d'amiante via Microscopie Optique (MOLP) et Électronique (MET).</p>
-                <ul>
-                    <li><strong>Production & qualité</strong> : analyse de 13 000 échantillons/an (1 100/mois) avec respect strict des protocoles ISO, taux de conformité >99%.</li>
-                    <li><strong>Gestion de données complexes</strong> : traçabilité exhaustive de milliers d'échantillons, détection de patterns anormaux, reporting précis sous contraintes réglementaires.</li>
-                    <li><strong>Formation & transmission</strong> : montée en compétence des nouveaux analystes sur protocoles techniques et administratifs.</li>
-                </ul>
-                <p><em><strong>Compétences transférables vers Data Engineering :</strong> rigueur méthodologique (protocoles stricts = code quality), analyse de données complexes (échantillons = datasets), gestion qualité (contrôles = tests unitaires), documentation exhaustive.</em></p>
-            </div>
-
-            <div class="experience-item">
-                <h3>🎓 Certificat Data Engineer - 400h</h3>
-                <div class="company">Mines Paris - PLS Executive Education & DataScientest · Paris</div>
-                <div class="period">Juillet 2025 - Octobre 2025 · 4 mois (400h)</div>
-                <p>Formation axée sur la conception et l'industrialisation de pipelines ETL/ELT robustes, de l'ingestion à la livraison des données.</p>
-                <p><strong>Réalisation de projets nécessitant l'utilisation de :</strong></p>
-                <ul>
-                    <li><strong>Langages de programmation</strong> : Python, Scala, SQL.</li>
-                    <li><strong>Bases de données & Data Warehousing</strong> : MySQL, PostgreSQL, MongoDB, Cassandra.</li>
-                    <li><strong>Big Data & Traitement distribué</strong> : Apache Spark (PySpark), Apache Kafka.</li>
-                    <li><strong>ETL & Orchestration</strong> : Apache Airflow, DBT.</li>
-                    <li><strong>Infrastructure & DevOps</strong> : Linux, Bash, Docker, Git, GitHub, GitLab, CI/CD.</li>
-                    <li><strong>Cloud</strong> : AWS (S3), Azure.</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <h3>🎓 Master - RSE</h3>
-                <div class="company">Université de Versailles Saint-Quentin-en-Yvelines (UVSQ) · Paris</div>
-                <div class="period">2018 - 2019</div>
-                <p>Formation axée sur la RSE et le développement durable. Conduite des audits (internes et externes), la gouvernance et gestion des risques, gestion des documents d'évaluation de risques, veille réglementaire et technique. Principes de certification : normes ISO 9001 (services) et 26000 (RSE).</p>
-            </div>
-
-            <div class="experience-item">
-                <h3>🎓 Master - Géologie</h3>
-                <div class="company">Université de Rennes 1</div>
-                <div class="period">2016 - 2018</div>
-                <p>Acquisition de compétences en Exploration et Prospection des Ressources Minérales et Pétrolières (RMP), gestion des risques naturels et analyse géologique.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="competences" class="white-section">
-        <h2>Compétences Techniques</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>💻 Langages de Programmation</h3>
-                <ul>
-                    <li>Python</li>
-                    <li>SQL</li>
-                    <li>Scala</li>
-                    <li>Bash</li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <h3>🗄️ Bases de Données & Data Warehousing</h3>
-                <ul>
-                    <li>SQL (MySQL, PostgreSQL)</li>
-                    <li>MongoDB (NoSQL)</li>
-                    <li>Cassandra</li>
-                    <li>Snowflake</li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <h3>⚡ Big Data & Traitement Distribué</h3>
-                <ul>
-                    <li>Apache Spark (PySpark)</li>
-                    <li>Spark Streaming</li>
-                    <li>Apache Kafka</li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <h3>🔄 ETL & Orchestration</h3>
-                <ul>
-                    <li>Apache Airflow</li>
-                    <li>DBT (Data Build Tool)</li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <h3>🛠️ Infrastructure & DevOps</h3>
-                <ul>
-                    <li>Linux & Bash</li>
-                    <li>Docker & Kubernetes</li>
-                    <li>Git / GitHub / GitLab</li>
-                    <li>CI/CD (GitLab CI)</li>
-                    <li>Tests Unitaires</li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <h3>📊 Monitoring & Observabilité</h3>
-                <ul>
-                    <li>Prometheus</li>
-                    <li>Grafana</li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <h3>☁️ Cloud Platforms</h3>
-                <ul>
-                    <li>AWS (S3)</li>
-                    <li>Azure</li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <h3>🚀 APIs & Développement</h3>
-                <ul>
-                    <li>FastAPI</li>
-                    <li>POO (Programmation Orientée Objet)</li>
-                    <li>scikit-learn</li>
-                    <li>CamemBERT</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="projets" class="projects-section">
-        <h2 style="color: white;">Projet Phare</h2>
-        
-        <div class="project-featured">
-            <div class="project-header">
-                <div class="project-badge">⭐ PROJET PRINCIPAL</div>
-                <h3>🎯 Pipeline d'Analyse de Satisfaction Client</h3>
-                <p class="subtitle">ShowroomPrivé</p>
-            </div>
-            
-            <div class="project-body">
-                <div class="project-section">
-                    <h4>🎯 Contexte & Challenge</h4>
-                    <p>Concevoir un pipeline complet d'analyse de satisfaction client e-commerce, de la collecte web à la prédiction ML, avec exposition API et dashboard décisionnel temps réel. <strong>Objectif : analyser la satisfaction client pour détecter les points d'amélioration du service après-vente de ShowroomPrivé.</strong></p>
+    <main>
+        <section id="accueil" class="hero">
+            <div class="hero-header">
+                <img src="https://diakhaby-data.github.io/portrait.png"
+                     alt="Mamadou DIAKHABY"
+                     class="hero-portrait"
+                     onerror="this.style.display='none'">
+                <div class="hero-title-container">
+                    <h1>Mamadou DIAKHABY</h1>
                 </div>
+            </div>
+            <p class="role">Data Engineer</p>
+            <p class="tagline">
+                Conception de pipelines ETL/ELT de bout en bout,<br>
+                de l'ingestion automatisée jusqu'au monitoring en production.
+            </p>
+            <p class="location">Paris, Île-de-France</p>
+            <div class="status-badge">Disponible, CDI Data Engineer</div>
+            <div class="cta-container">
+                <a href="#projets" class="btn btn-primary">Voir mon projet principal</a>
+                <a href="#contact" class="btn btn-secondary">Me contacter</a>
+            </div>
+        </section>
 
-                <div class="project-section">
-                    <h4>🗺️ Architecture Complète & Pipeline ETL</h4>
-                    <p><strong>Pipeline end-to-end :</strong> MongoDB → Airflow → MySQL → FastAPI → Prometheus/Grafana.</p>
+        <section id="a-propos" class="white-section">
+            <h2>À propos</h2>
+            <div class="about-content">
+                <p>
+                    Avant de coder mon premier pipeline, j'analysais des fibres d'amiante à la microscopie électronique.
+                    Quatre ans à traiter des volumes importants de données sous protocole ISO strict m'ont appris ce que peu de formations transmettent :
+                    la culture de la rigueur, de la traçabilité et de la responsabilité sur chaque résultat produit.
+                    C'est cet état d'esprit que j'applique aujourd'hui à l'ingénierie des données.
+                </p>
+                <p>
+                    Formé chez Mines Paris – PSL Executive Education en partenariat avec DataScientest, j'ai construit un pipeline complet
+                    d'analyse de satisfaction client, de la collecte web au dashboard décisionnel en temps réel, en passant par le machine learning,
+                    l'API REST et le monitoring. Chaque étape est orchestrée, testée et documentée.
+                </p>
+                <p>
+                    Je cherche un poste de Data Engineer en CDI où je peux contribuer à des projets data concrets, dans une équipe qui
+                    prend la qualité des données autant au sérieux que moi.
+                </p>
+
+                <div class="highlight-box">
+                    <h3>Ce que vous trouverez dans mon code</h3>
                     <ul>
-                        <li><strong>Ingestion automatisée</strong> : Scraping 20 259 avis (BeautifulSoup) + migration des données brutes depuis MongoDB vers MySQL avec orchestration Airflow (98,7% d'intégrité des données).</li>
-                        <li><strong>Modélisation relationnelle</strong> : Schéma SQL optimisé avec scripts de transformation et tests de qualité des données.</li>
-                        <li><strong>Machine Learning</strong> : Pipeline d'analyse de sentiments (TF-IDF + Régression Logistique, RandomForest, SVM, CamemBERT) avec réentraînement automatique - F1-score = 0.92.</li>
-                        <li><strong>API REST production-ready</strong> : FastAPI avec documentation Swagger (endpoints /predict, /stats, health check) - latence < 200 ms.</li>
-                        <li><strong>Orchestration Airflow</strong> : DAG automatisé 7 tâches (scraping → cleaning → aggregation → MongoDB → reporting → alertes → ML).</li>
-                        <li><strong>Containerisation complète</strong> : Architecture Docker multi-services (MySQL, MongoDB, Airflow, API, monitoring).</li>
-                        <li><strong>Observabilité</strong> : Stack complète Prometheus + Grafana + StatsD pour métriques temps réel et alerting automatique.</li>
+                        <li><strong>Des pipelines testés et reproductibles</strong> : architecture modulaire Python, 87 % de couverture avec pytest, formatage Black et linting Flake8.</li>
+                        <li><strong>Une vision end-to-end assumée</strong> : de l'ingestion (scraping, APIs, Kafka) à l'exposition (FastAPI, Grafana), chaque brique est connectée et monitorée.</li>
+                        <li><strong>Une infrastructure qui tient en production</strong> : Docker Compose multi-services, CI/CD GitHub Actions, sauvegardes automatisées MySQL et MongoDB.</li>
+                        <li><strong>De la documentation qui sert à quelque chose</strong> : README technique, ERD, diagrammes d'architecture, OpenAPI/Swagger.</li>
                     </ul>
                 </div>
 
-                <div class="project-section">
-                    <h4>🔧 Qualité & DevOps</h4>
+                <p>
+                    Mon parcours est atypique : géologie, RSE, laboratoire scientifique, puis data engineering.
+                    Cette diversité est une force : je sais travailler avec des contraintes réglementaires strictes,
+                    communiquer des résultats à des non-techniciens et m'adapter rapidement à de nouveaux domaines.
+                </p>
+            </div>
+        </section>
+
+        <section id="parcours" class="white-section">
+            <h2>Parcours et Formation</h2>
+            <div class="experience-timeline">
+
+                <div class="experience-item">
+                    <h3>Analyste MOLP/MET et Formateur</h3>
+                    <div class="company">ITGA, CDI</div>
+                    <div class="period">Février 2022 – aujourd'hui, 4 ans, Paris</div>
+                    <p>
+                        Analyse de matériaux de construction et filtres d'air pour la détection des fibres d'amiante
+                        par microscopie optique (MOLP) et électronique à transmission (MET).
+                    </p>
                     <ul>
-                        <li><strong>Code structuré</strong> : Architecture modulaire Python (src/ingestion, src/transform, src/utils).</li>
-                        <li><strong>Tests & Qualité</strong> : Black (formatage), Flake8 (linting), Pytest (tests unitaires, 87% couverture).</li>
-                        <li><strong>CI/CD</strong> : GitHub Actions (build, tests, staging automatisés).</li>
-                        <li><strong>Sauvegarde & Restauration</strong> : Scripts automatisés MySQL (mysqldump) et MongoDB (mongodump).</li>
-                        <li><strong>Documentation</strong> : README technique complet, ERD, architecture diagrams, OpenAPI/Swagger.</li>
+                        <li><strong>Production et qualité :</strong> 13 000 échantillons analysés par an (1 100 par mois), conformité supérieure à 99 % aux protocoles ISO.</li>
+                        <li><strong>Gestion de données :</strong> traçabilité exhaustive des résultats, détection de patterns anormaux, reporting précis sous contraintes réglementaires.</li>
+                        <li><strong>Transmission :</strong> formation et montée en compétences des nouveaux analystes sur les protocoles techniques et administratifs.</li>
+                    </ul>
+                    <p>
+                        <em>La rigueur d'un protocole de laboratoire et celle d'un pipeline de données répondent à la même logique :
+                        chaque étape doit être traçable, reproductible et documentée. Cette exigence, je l'ai intégrée bien avant de découvrir pytest.</em>
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Certificat Data Engineer (400 heures)</h3>
+                    <div class="company">Mines Paris – PSL Executive Education, en partenariat avec DataScientest, Paris</div>
+                    <div class="period">Juillet 2025 – Octobre 2025, 4 mois</div>
+                    <p>Formation intensive axée sur la conception et l'industrialisation de pipelines ETL/ELT, de l'ingestion à la livraison des données.</p>
+                    <ul>
+                        <li><strong>Langages :</strong> Python, Scala, SQL.</li>
+                        <li><strong>Bases de données :</strong> MySQL, PostgreSQL, MongoDB, Cassandra.</li>
+                        <li><strong>Big Data :</strong> Apache Spark (PySpark), Apache Kafka.</li>
+                        <li><strong>Orchestration :</strong> Apache Airflow, DBT.</li>
+                        <li><strong>Infrastructure :</strong> Linux, Bash, Docker, Git, GitHub, GitLab, CI/CD.</li>
+                        <li><strong>Cloud :</strong> AWS S3, Azure.</li>
                     </ul>
                 </div>
 
-                <div class="project-section">
-                    <h4>💼 Résultats & Impact</h4>
-                    <div class="impact-metrics">
-                        <div class="metric-card">
-                            <div class="metric-value">20 000+</div>
-                            <div class="metric-label">avis clients traités et analysés automatiquement.</div>
-                        </div>
-                        <div class="metric-card">
-                            <div class="metric-value">75%</div>
-                            <div class="metric-label">Réduction du temps de traitement manuel grâce à l'automatisation.</div>
-                        </div>
-                        <div class="metric-card">
-                            <div class="metric-value">✅</div>
-                            <div class="metric-label">Pipeline production-ready : reproductible, testé, documenté et monitoré.</div>
-                        </div>
-                        <div class="metric-card">
-                            <div class="metric-value">✅</div>
-                            <div class="metric-label">API REST déployée avec prédictions ML accessibles via endpoints REST.</div>
-                        </div>
-                        <div class="metric-card">
-                            <div class="metric-value">✅</div>
-                            <div class="metric-label">Infrastructure scalable containerisée avec Docker-Compose.</div>
-                        </div>
-                        <div class="metric-card">
-                            <div class="metric-value">✅</div>
-                            <div class="metric-label">Monitoring temps réel avec dashboards Grafana et alerting Prometheus.</div>
-                        </div>
-                    </div>
+                <div class="experience-item">
+                    <h3>Master en Responsabilité Sociétale des Entreprises</h3>
+                    <div class="company">Université de Versailles Saint-Quentin-en-Yvelines (UVSQ), Paris</div>
+                    <div class="period">2018 – 2019</div>
+                    <p>
+                        Gouvernance et gestion des risques, conduite d'audits internes et externes, veille réglementaire et technique.
+                        Principes de certification ISO 9001 et ISO 26000.
+                    </p>
                 </div>
 
-                <div class="project-gallery">
-                    <h4>📸 Aperçu du Pipeline & Résultats</h4>
-                    <div class="gallery-grid">
-                        <!-- Dashboard Satisfaction (943×746px, ratio 1.26:1) - Paysage standard -->
-                        <div class="gallery-item full-width standard-dashboard" onclick="openModal(this)">
-                            <img src="https://diakhaby-data.github.io/dashboard.png" alt="Dashboard Satisfaction Client" data-caption="Dashboard Satisfaction Client - Distribution par étoiles et analyse de sentiment (37 541 avis analysés)">
-                            <div class="gallery-caption">📊 Dashboard Satisfaction Client - Distribution & Sentiments.</div>
-                        </div>
-                        
-                        <!-- API et Taux de prédiction côte à côte (petits) -->
-                        <div class="gallery-item small-item" onclick="openModal(this)">
-                            <img src="https://diakhaby-data.github.io/API.png" alt="API FastAPI" data-caption="API FastAPI - Documentation Swagger avec endpoints REST (/predict, /stats, health check)">
-                            <div class="gallery-caption">🚀 API FastAPI - Documentation Swagger.</div>
-                        </div>
-                        
-                        <div class="gallery-item small-item" onclick="openModal(this)">
-                            <img src="https://diakhaby-data.github.io/Taux%20de%20pr%C3%A9diction.png" alt="Taux de Prédiction ML" data-caption="Performance du Modèle ML - F1-score: 0.92 avec analyse comparative des algorithmes (TF-IDF, Random Forest, SVM, CamemBERT)">
-                            <div class="gallery-caption">🤖 Performance Modèle ML - F1-score: 0.92.</div>
-                        </div>
-                        
-                        <!-- Prometheus (1909×619px, ratio 3.08:1) - Ultra-panoramique -->
-                        <div class="gallery-item full-width ultra-wide-dashboard" onclick="openModal(this)">
-                            <img src="https://diakhaby-data.github.io/prometheus.png" alt="Monitoring Prometheus" data-caption="Prometheus - Interface de requêtage PromQL avec graphiques de séries temporelles pour métriques système en temps réel">
-                            <div class="gallery-caption">📈 Prometheus - Métriques Système & PromQL.</div>
-                        </div>
-                        
-                        <!-- Grafana (1917×733px, ratio 2.61:1) - Très panoramique -->
-                        <div class="gallery-item full-width wide-dashboard" onclick="openModal(this)">
-                            <img src="https://diakhaby-data.github.io/dashboard_grafana.png" alt="Dashboard Grafana" data-caption="Dashboard Grafana - Monitoring complet : CPU, RAM, erreurs HTTP, temps de réponse (P50/P95/P99), distribution des sentiments, latences, satisfaction client et métriques système">
-                            <div class="gallery-caption">📉 Dashboard Grafana - Monitoring Complet & KPIs Temps Réel.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-section">
-                    <h4>🛠️ Stack Technique</h4>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">SQL (MySQL)</span>
-                        <span class="tag">MongoDB</span>
-                        <span class="tag">FastAPI</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">Git/GitHub</span>
-                        <span class="tag">Airflow</span>
-                        <span class="tag">Prometheus</span>
-                        <span class="tag">Grafana</span>
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">TF-IDF</span>
-                        <span class="tag">CamemBERT</span>
-                        <span class="tag">Pytest</span>
-                        <span class="tag">CI/CD</span>
-                    </div>
-                </div>
-
-                <div class="project-links">
-                    <a href="https://github.com/Diakhaby-data/Projet_satisfaction" class="project-btn" target="_blank" rel="noopener noreferrer">📦 Voir le projet complet</a>
-                    <a href="https://github.com/Diakhaby-data" class="project-btn" target="_blank" rel="noopener noreferrer">💻 Tous mes repos</a>
+                <div class="experience-item">
+                    <h3>Master en Géologie</h3>
+                    <div class="company">Université de Rennes 1</div>
+                    <div class="period">2016 – 2018</div>
+                    <p>
+                        Exploration et prospection des ressources minérales et pétrolières, gestion des risques naturels et analyse géologique.
+                    </p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <h2 style="color: white; margin-top: 4rem;">Autres Projets</h2>
-        <div class="other-projects">
-            <div class="project-card">
+        <section id="competences" class="white-section">
+            <h2>Compétences Techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Langages</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>Scala</li>
+                        <li>Bash</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Bases de données</h3>
+                    <ul>
+                        <li>MySQL, PostgreSQL</li>
+                        <li>MongoDB</li>
+                        <li>Cassandra</li>
+                        <li>Snowflake</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Big Data</h3>
+                    <ul>
+                        <li>Apache Spark (PySpark)</li>
+                        <li>Spark Streaming</li>
+                        <li>Apache Kafka</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>ETL et Orchestration</h3>
+                    <ul>
+                        <li>Apache Airflow</li>
+                        <li>DBT</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Infrastructure et DevOps</h3>
+                    <ul>
+                        <li>Linux et Bash</li>
+                        <li>Docker et Kubernetes</li>
+                        <li>Git, GitHub, GitLab</li>
+                        <li>CI/CD (GitLab CI, GitHub Actions)</li>
+                        <li>Tests unitaires (pytest)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Monitoring</h3>
+                    <ul>
+                        <li>Prometheus</li>
+                        <li>Grafana</li>
+                        <li>StatsD</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Cloud</h3>
+                    <ul>
+                        <li>AWS S3</li>
+                        <li>Azure</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>APIs et ML</h3>
+                    <ul>
+                        <li>FastAPI</li>
+                        <li>scikit-learn</li>
+                        <li>TF-IDF</li>
+                        <li>CamemBERT</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projets" class="projects-section">
+            <h2 class="section-title-light">Projet Principal</h2>
+
+            <div class="project-featured">
                 <div class="project-header">
-                    <h3>⚡ Streaming Data Pipeline</h3>
-                    <p class="subtitle">Traitement temps réel avec Kafka & Monitoring</p>
+                    <div class="project-badge">Projet phare</div>
+                    <h3>Pipeline d'analyse de satisfaction client</h3>
+                    <p class="subtitle">ShowroomPrivé : du scraping au dashboard décisionnel</p>
                 </div>
+
                 <div class="project-body">
-                    <p>Architecture de streaming pour ingestion et traitement temps réel de flux de données avec Apache Kafka. Intégration avec Spark Streaming, stockage dans Cassandra et monitoring complet avec Prometheus/Grafana.</p>
-                    <div class="project-tags">
-                        <span class="tag">Apache Kafka</span>
-                        <span class="tag">PySpark</span>
-                        <span class="tag">Cassandra</span>
-                        <span class="tag">Prometheus</span>
-                        <span class="tag">Grafana</span>
+                    <div class="project-section">
+                        <h4>Contexte et problématique</h4>
+                        <p>
+                            ShowroomPrivé accumule des milliers d'avis clients sur Trustpilot, impossible à exploiter manuellement à cette échelle.
+                            L'objectif : automatiser leur collecte, détecter automatiquement les sentiments négatifs et fournir aux équipes métier
+                            un tableau de bord décisionnel actualisé en continu.
+                            Du scraping à l'alerte Prometheus, chaque étape du pipeline est orchestrée, testée et monitorée.
+                        </p>
                     </div>
+
+                    <div class="project-section">
+                        <h4>Architecture et pipeline ETL</h4>
+                        <p><strong>Pipeline de bout en bout :</strong> MongoDB → Airflow → MySQL → FastAPI → Prometheus / Grafana</p>
+                        <ul>
+                            <li><strong>Ingestion :</strong> scraping de 20 259 avis via BeautifulSoup, migration des données brutes de MongoDB vers MySQL orchestrée par Airflow (98,7 % d'intégrité).</li>
+                            <li><strong>Modélisation :</strong> schéma relationnel optimisé, scripts de transformation et tests de qualité des données.</li>
+                            <li><strong>Machine learning :</strong> analyse de sentiments avec TF-IDF, régression logistique, Random Forest, SVM et CamemBERT. Réentraînement automatique, F1-score de 0,92.</li>
+                            <li><strong>API REST :</strong> FastAPI avec documentation Swagger, endpoints /predict, /stats et health check, latence inférieure à 200 ms.</li>
+                            <li><strong>Orchestration :</strong> DAG Airflow à 7 tâches (scraping, nettoyage, agrégation, stockage, reporting, alertes, ML).</li>
+                            <li><strong>Infrastructure :</strong> Docker Compose multi-services (MySQL, MongoDB, Airflow, API, monitoring).</li>
+                            <li><strong>Observabilité :</strong> stack Prometheus, Grafana et StatsD pour métriques temps réel et alerting automatique.</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-section">
+                        <h4>Qualité et DevOps</h4>
+                        <ul>
+                            <li><strong>Architecture modulaire :</strong> src/ingestion, src/transform, src/utils. Chaque module est indépendant et testable.</li>
+                            <li><strong>Tests et formatage :</strong> Black, Flake8, pytest avec 87 % de couverture.</li>
+                            <li><strong>CI/CD :</strong> GitHub Actions pour build, tests et déploiement en staging.</li>
+                            <li><strong>Sauvegarde :</strong> scripts automatisés mysqldump et mongodump.</li>
+                            <li><strong>Documentation :</strong> README technique complet, ERD, diagrammes d'architecture, OpenAPI/Swagger.</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-section">
+                        <h4>Résultats mesurés</h4>
+                        <div class="impact-metrics">
+                            <div class="metric-card">
+                                <div class="metric-value">20 259</div>
+                                <div class="metric-label">avis clients collectés, nettoyés et analysés automatiquement.</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">75 %</div>
+                                <div class="metric-label">de réduction du temps de traitement manuel grâce à l'automatisation.</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">0,92</div>
+                                <div class="metric-label">F1-score du modèle d'analyse de sentiments (CamemBERT).</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">&lt; 200 ms</div>
+                                <div class="metric-label">latence de l'API de prédiction en conditions normales.</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">87 %</div>
+                                <div class="metric-label">de couverture de tests unitaires (pytest).</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">7</div>
+                                <div class="metric-label">tâches Airflow orchestrées dans un DAG entièrement automatisé.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-gallery">
+                        <h4>Aperçu du pipeline</h4>
+                        <div class="gallery-grid">
+                            <div class="gallery-item full-width standard-dashboard"
+                                 role="button" tabindex="0"
+                                 aria-label="Agrandir : Dashboard Satisfaction Client">
+                                <img src="https://diakhaby-data.github.io/dashboard.png"
+                                     alt="Dashboard Satisfaction Client"
+                                     loading="lazy" decoding="async"
+                                     data-caption="Dashboard Satisfaction Client : distribution par étoiles et analyse de sentiment sur 20 259 avis.">
+                                <div class="gallery-caption">Dashboard Satisfaction Client : distribution et analyse de sentiment</div>
+                            </div>
+
+                            <div class="gallery-item small-item"
+                                 role="button" tabindex="0"
+                                 aria-label="Agrandir : Documentation API FastAPI">
+                                <img src="https://diakhaby-data.github.io/API.png"
+                                     alt="Documentation API FastAPI"
+                                     loading="lazy" decoding="async"
+                                     data-caption="API FastAPI : documentation Swagger avec endpoints REST (/predict, /stats, health check).">
+                                <div class="gallery-caption">API FastAPI : documentation Swagger</div>
+                            </div>
+
+                            <div class="gallery-item small-item"
+                                 role="button" tabindex="0"
+                                 aria-label="Agrandir : Performance du modèle ML">
+                                <img src="https://diakhaby-data.github.io/Taux%20de%20pr%C3%A9diction.png"
+                                     alt="Performance du modèle ML"
+                                     loading="lazy" decoding="async"
+                                     data-caption="Performance du modèle ML : F1-score de 0,92 (comparaison TF-IDF, Random Forest, SVM, CamemBERT).">
+                                <div class="gallery-caption">Modèle ML : F1-score 0,92</div>
+                            </div>
+
+                            <div class="gallery-item full-width ultra-wide-dashboard"
+                                 role="button" tabindex="0"
+                                 aria-label="Agrandir : Interface Prometheus">
+                                <img src="https://diakhaby-data.github.io/prometheus.png"
+                                     alt="Interface Prometheus"
+                                     loading="lazy" decoding="async"
+                                     data-caption="Prometheus : requêtage PromQL et graphiques de séries temporelles pour les métriques système en temps réel.">
+                                <div class="gallery-caption">Prometheus : métriques système et PromQL</div>
+                            </div>
+
+                            <div class="gallery-item full-width wide-dashboard"
+                                 role="button" tabindex="0"
+                                 aria-label="Agrandir : Dashboard Grafana">
+                                <img src="https://diakhaby-data.github.io/dashboard_grafana.png"
+                                     alt="Dashboard Grafana"
+                                     loading="lazy" decoding="async"
+                                     data-caption="Dashboard Grafana : CPU, RAM, erreurs HTTP, latences P50/P95/P99, distribution des sentiments et satisfaction client en temps réel.">
+                                <div class="gallery-caption">Grafana : monitoring complet et KPIs temps réel</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h4>Stack technique</h4>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">GitHub Actions</span>
+                            <span class="tag">Apache Airflow</span>
+                            <span class="tag">Prometheus</span>
+                            <span class="tag">Grafana</span>
+                            <span class="tag">scikit-learn</span>
+                            <span class="tag">TF-IDF</span>
+                            <span class="tag">CamemBERT</span>
+                            <span class="tag">pytest</span>
+                            <span class="tag">CI/CD</span>
+                        </div>
+                    </div>
+
                     <div class="project-links">
-                        <a href="https://github.com/Diakhaby-data" class="project-btn" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://github.com/Diakhaby-data/Projet_satisfaction"
+                           class="project-btn"
+                           target="_blank" rel="noopener noreferrer">Voir le projet sur GitHub</a>
+                        <a href="https://github.com/Diakhaby-data"
+                           class="project-btn"
+                           target="_blank" rel="noopener noreferrer">Tous mes repositories</a>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>❄️ Data Warehouse Snowflake</h3>
-                    <p class="subtitle">Architecture moderne avec DBT</p>
-                </div>
-                <div class="project-body">
-                    <p>Conception d'un data warehouse moderne sur Snowflake avec modélisation dimensionnelle. Transformations et tests de qualité avec DBT, orchestration Airflow et documentation automatisée.</p>
-                    <div class="project-tags">
-                        <span class="tag">Snowflake</span>
-                        <span class="tag">DBT</span>
-                        <span class="tag">SQL</span>
-                        <span class="tag">Airflow</span>
+            <h2 class="section-title-light section-title-spaced">Autres Projets</h2>
+            <div class="other-projects">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Pipeline de Streaming Temps Réel</h3>
+                        <p class="subtitle">Kafka, Spark Streaming et Cassandra</p>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Diakhaby-data" class="project-btn" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <div class="project-body">
+                        <p>
+                            Architecture de streaming pour l'ingestion et le traitement temps réel de flux de données avec Apache Kafka.
+                            Intégration avec Spark Streaming, persistance dans Cassandra et monitoring Prometheus/Grafana.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Apache Kafka</span>
+                            <span class="tag">PySpark</span>
+                            <span class="tag">Cassandra</span>
+                            <span class="tag">Prometheus</span>
+                            <span class="tag">Grafana</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Diakhaby-data"
+                               class="project-btn"
+                               target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Data Warehouse Snowflake</h3>
+                        <p class="subtitle">Modélisation dimensionnelle et DBT</p>
+                    </div>
+                    <div class="project-body">
+                        <p>
+                            Conception d'un entrepôt de données sur Snowflake avec modélisation dimensionnelle.
+                            Transformations et tests de qualité avec DBT, orchestration Airflow et documentation générée automatiquement.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Snowflake</span>
+                            <span class="tag">DBT</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Apache Airflow</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Diakhaby-data"
+                               class="project-btn"
+                               target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Data Lake sur AWS</h3>
+                        <p class="subtitle">Infrastructure cloud et CI/CD GitLab</p>
+                    </div>
+                    <div class="project-body">
+                        <p>
+                            Déploiement d'un data lake sur AWS avec stockage S3, gestion des formats Parquet et JSON,
+                            et automatisation des pipelines d'ingestion via CI/CD GitLab.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">AWS S3</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">GitLab CI/CD</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Diakhaby-data"
+                               class="project-btn"
+                               target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>☁️ Data Lake sur AWS</h3>
-                    <p class="subtitle">Infrastructure cloud scalable</p>
-                </div>
-                <div class="project-body">
-                    <p>Déploiement d'un data lake sur AWS avec stockage S3, gestion des formats de données (Parquet, JSON), et automatisation des pipelines d'ingestion avec CI/CD GitLab.</p>
-                    <div class="project-tags">
-                        <span class="tag">AWS S3</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">GitLab CI/CD</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Diakhaby-data" class="project-btn" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    </div>
-                </div>
+        <section id="contact" class="contact">
+            <h2>Me contacter</h2>
+            <div class="contact-intro">
+                <p><strong>Disponible immédiatement pour un CDI Data Engineer.</strong></p>
+                <p>
+                    Je suis ouvert à tout échange sur vos projets data, que ce soit pour discuter d'une opportunité,
+                    d'une architecture ou simplement pour me présenter. N'hésitez pas à me contacter par email ou LinkedIn.
+                </p>
             </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Me Contacter</h2>
-        <div class="contact-intro">
-            <p><strong>🎯 En recherche de CDI - Data Engineer</strong></p>
-            <p>Je suis disponible immédiatement pour échanger sur vos projets data et discuter de la manière dont je peux contribuer à vos enjeux de Data Engineering.</p>
-        </div>
-        <div class="contact-links">
-            <a href="mailto:diakhaby14@gmail.com" class="contact-link">📧 Email</a>
-            <a href="https://www.linkedin.com/in/mamadou-diakhaby-879856156/" class="contact-link" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
-            <a href="https://github.com/Diakhaby-data" class="contact-link" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
-            <a href="https://diakhaby-data.github.io/CV_Mamadou_Diakhaby_Data_Engineer.pdf" class="contact-link" target="_blank" rel="noopener noreferrer" download>📄 Télécharger mon CV</a>
-        </div>
-    </section>
+            <div class="contact-links">
+                <a href="mailto:diakhaby14@gmail.com" class="contact-link">Email</a>
+                <a href="https://www.linkedin.com/in/mamadou-diakhaby-879856156/"
+                   class="contact-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/Diakhaby-data"
+                   class="contact-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://diakhaby-data.github.io/CV_Mamadou_Diakhaby_Data_Engineer.pdf"
+                   class="contact-link" target="_blank" rel="noopener noreferrer" download>Télécharger mon CV</a>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Mamadou DIAKHABY - Data Engineer | Pipelines ETL/ELT scalables & automatisés - Tous droits réservés.</p>
-        <p style="margin-top: 0.8rem; font-size: 0.95rem;">📍 Paris, Île-de-France, France | <a href="mailto:diakhaby14@gmail.com">diakhaby14@gmail.com</a></p>
+        <p>&copy; <span id="year"></span> Mamadou DIAKHABY, Data Engineer</p>
+        <p class="footer-meta">Paris, Île-de-France &nbsp;|&nbsp; <a href="mailto:diakhaby14@gmail.com">diakhaby14@gmail.com</a></p>
     </footer>
 
     <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.nav-link');
 
-        function updateActiveNav() {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (window.scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', updateActiveNav);
-        updateActiveNav();
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
                     });
                 }
             });
+        }, { rootMargin: '-40% 0px -60% 0px' });
+
+        sections.forEach(section => navObserver.observe(section));
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
         });
 
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
+        const cardObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
                     setTimeout(() => {
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
                     }, index * 100);
-                    observer.unobserve(entry.target);
+                    cardObserver.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
         document.querySelectorAll('.project-card, .experience-item, .skill-category, .gallery-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'opacity 0.6s, transform 0.6s';
-            observer.observe(el);
+            cardObserver.observe(el);
         });
 
-        function openModal(element) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            const modalCaption = document.getElementById('modalCaption');
-            const img = element.querySelector('img');
-            
-            modal.style.display = 'block';
-            modalImg.src = img.src;
-            modalCaption.textContent = img.getAttribute('data-caption');
+        function openModal(item) {
+            const img = item.querySelector('img');
+            document.getElementById('modalImage').src = img.src;
+            document.getElementById('modalImage').alt = img.alt;
+            document.getElementById('modalCaption').textContent = img.getAttribute('data-caption');
+            document.getElementById('imageModal').style.display = 'block';
         }
 
-        document.querySelector('.close-modal').onclick = function() {
+        function closeModal() {
             document.getElementById('imageModal').style.display = 'none';
         }
 
-        document.getElementById('imageModal').onclick = function(event) {
-            if (event.target === this) {
-                this.style.display = 'none';
-            }
-        }
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => openModal(item));
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(item); }
+            });
+        });
 
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                document.getElementById('imageModal').style.display = 'none';
-            }
+        const closeBtn = document.querySelector('.close-modal');
+        closeBtn.addEventListener('click', closeModal);
+        closeBtn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); closeModal(); }
+        });
+
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
         });
     </script>
 </body>
