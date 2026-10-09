@@ -11,7 +11,7 @@
     <meta property="og:url" content="https://diakhaby-data.github.io/">
     <meta property="og:type" content="profile">
     <meta name="twitter:card" content="summary_large_image">
-h
+
     <title>Mamadou DIAKHABY, Data Engineer</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%23667eea'/><text x='50' y='67' font-family='system-ui,sans-serif' font-size='42' font-weight='700' text-anchor='middle' fill='white'>MD</text></svg>">
     <style>
@@ -107,7 +107,7 @@ h
             flex-shrink: 0;
             position: absolute;
             left: calc(-40px - 1cm);
-            top: 50%;h
+            top: 50%;
             transform: translateY(-60%);
         }
         .hero-title-container {
@@ -644,9 +644,11 @@ h
                     C'est cet état d'esprit que j'applique aujourd'hui à l'ingénierie des données.
                 </p>
                 <p>
-                    Formé chez Mines Paris – PSL Executive Education en partenariat avec DataScientest, j'ai construit un pipeline complet
-                    d'analyse de satisfaction client, de la collecte web au dashboard décisionnel en temps réel, en passant par le machine learning,
-                    l'API REST et le monitoring. Chaque étape est orchestrée, testée et documentée.
+                    Formé chez Mines Paris – PSL Executive Education en partenariat avec DataScientest, j'ai depuis construit plusieurs pipelines
+                    complets, de l'ingestion à la restitution décisionnelle. RetailFlow, mon projet phare, orchestre avec Airflow et dbt l'ingestion,
+                    la transformation et la supervision d'une plateforme data e-commerce, jusqu'à l'API et aux dashboards Grafana et Metabase.
+                    J'ai également développé un pipeline d'analyse de satisfaction client combinant scraping, machine learning (NLP) et API REST.
+                    Dans les deux cas, chaque étape est orchestrée, testée et documentée.
                 </p>
                 <p>
                     Je cherche un poste de Data Engineer en CDI où je peux contribuer à des projets data concrets, dans une équipe qui
@@ -656,10 +658,10 @@ h
                 <div class="highlight-box">
                     <h3>Ce que vous trouverez dans mon code</h3>
                     <ul>
-                        <li><strong>Des pipelines testés et reproductibles</strong> : architecture modulaire Python, 87 % de couverture avec pytest, formatage Black et linting Flake8.</li>
-                        <li><strong>Une vision end-to-end assumée</strong> : de l'ingestion (scraping, APIs, Kafka) à l'exposition (FastAPI, Grafana), chaque brique est connectée et monitorée.</li>
-                        <li><strong>Une infrastructure qui tient en production</strong> : Docker Compose multi-services, CI/CD GitHub Actions, sauvegardes automatisées MySQL et MongoDB.</li>
-                        <li><strong>De la documentation qui sert à quelque chose</strong> : README technique, ERD, diagrammes d'architecture, OpenAPI/Swagger.</li>
+                        <li><strong>Des pipelines testés et reproductibles</strong> : architecture modulaire Python, tests automatisés, formatage et linting systématiques.</li>
+                        <li><strong>Une vision end-to-end assumée</strong> : de l'ingestion (scraping, APIs, orchestration) à l'exposition (FastAPI, BI, Grafana), chaque brique est connectée et monitorée.</li>
+                        <li><strong>Une infrastructure qui tient en production</strong> : Docker Compose multi-services, CI/CD GitHub Actions, pipelines planifiés et historisés dans le temps.</li>
+                        <li><strong>De la documentation qui sert à quelque chose</strong> : README technique, diagrammes d'architecture, captures d'écran commentées, OpenAPI/Swagger.</li>
                     </ul>
                 </div>
 
@@ -816,6 +818,167 @@ h
             <div class="project-featured">
                 <div class="project-header">
                     <div class="project-badge">Projet phare</div>
+                    <h3>RetailFlow, plateforme data e-commerce</h3>
+                    <p class="subtitle">De l'ingestion multi-source à la restitution décisionnelle, un pipeline orchestré de bout en bout</p>
+                </div>
+
+                <div class="project-body">
+                    <div class="project-section">
+                        <h4>Contexte et problématique</h4>
+                        <p>
+                            RetailFlow reproduit la chaîne de valeur data d'une entreprise e-commerce : transformer des données brutes et dispersées
+                            en indicateurs fiables, exploitables par les équipes métier, sans intervention manuelle une fois le pipeline lancé.
+                            L'objectif du projet : construire une architecture data telle qu'on la retrouve en entreprise, avec orchestration,
+                            tests de qualité, supervision et restitution BI, pas un notebook isolé qui tourne une seule fois.
+                        </p>
+                    </div>
+
+                    <div class="project-section">
+                        <h4>Architecture et pipeline</h4>
+                        <p><strong>Pipeline de bout en bout :</strong> Ingestion multi-source → Airflow (orchestration) → PostgreSQL (entrepôt) → dbt (transformation) → FastAPI (exposition) → Prometheus / Grafana / Metabase (supervision et restitution)</p>
+                        <ul>
+                            <li><strong>Ingestion :</strong> DAG Airflow <code>retailflow_pipeline</code> de 16 tâches, qui ingère automatiquement 4 sources de données distinctes et valide leur qualité avant de charger l'entrepôt.</li>
+                            <li><strong>Transformation :</strong> modélisation en couches avec dbt (staging puis marts), tests de qualité dbt intégrés directement au DAG.</li>
+                            <li><strong>Entrepôt :</strong> PostgreSQL, interrogé nativement par Metabase pour la restitution décisionnelle.</li>
+                            <li><strong>API :</strong> FastAPI exposant les données clients, ventes et stock, documentée automatiquement via Swagger.</li>
+                            <li><strong>Orchestration :</strong> exécutions planifiées automatiquement en plus des déclenchements manuels, historisées sur plusieurs jours : le pipeline tourne en continu, pas à la demande.</li>
+                            <li><strong>Infrastructure :</strong> Docker Compose multi-services (8 services : orchestrateur, API, entrepôt, BI, monitoring).</li>
+                            <li><strong>Observabilité :</strong> Prometheus et Grafana supervisent à la fois la santé du pipeline (fraîcheur des données, résultats des tests dbt, volumes et qualité par table) et l'API en production (trafic par route, latence P50/P95/P99, erreurs HTTP, ressources).</li>
+                            <li><strong>BI :</strong> dashboard Metabase construit sur les marts dbt : chiffre d'affaires, répartition géographique et par catégorie, segmentation clients, santé du stock visualisée via une jauge à seuils.</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-section">
+                        <h4>Qualité et DevOps</h4>
+                        <ul>
+                            <li><strong>CI/CD :</strong> pipeline GitHub Actions déclenché à chaque push (build, vérifications).</li>
+                            <li><strong>Conteneurisation :</strong> l'ensemble des services est décrit dans un Docker Compose unique, environnement reproductible en une commande.</li>
+                            <li><strong>Qualité des données :</strong> validation automatique intégrée au DAG avant chargement de l'entrepôt, complétée par les tests dbt sur les modèles.</li>
+                            <li><strong>Documentation :</strong> README technique détaillé (architecture, stack, liste des services et ports, captures d'écran commentées).</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-section">
+                        <h4>Résultats mesurés</h4>
+                        <div class="impact-metrics">
+                            <div class="metric-card">
+                                <div class="metric-value">16</div>
+                                <div class="metric-label">tâches orchestrées dans le DAG Airflow, de l'ingestion à la notification finale.</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">4</div>
+                                <div class="metric-label">sources de données ingérées et validées automatiquement à chaque run.</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">8</div>
+                                <div class="metric-label">services dockerisés (orchestrateur, API, entrepôt, BI, monitoring) démarrés en une commande.</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">Continu</div>
+                                <div class="metric-label">runs planifiés automatiquement en plus des déclenchements manuels, historisés sur plusieurs jours.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-gallery">
+                        <h4>Aperçu du pipeline</h4>
+                        <div class="gallery-grid">
+                            <div class="gallery-item full-width wide-dashboard"
+                                 role="button" tabindex="0"
+                                 aria-label="Agrandir : DAG Airflow retailflow_pipeline">
+                                <img src="https://diakhaby-data.github.io/retailflow-airflow-dag.png"
+                                     alt="DAG Airflow retailflow_pipeline"
+                                     loading="lazy" decoding="async"
+                                     data-caption="Le DAG retailflow_pipeline (16 tâches) après un run réussi : ingestion des 4 sources, validation qualité, chargement de l'entrepôt, transformation dbt, jusqu'à la notification finale.">
+                                <div class="gallery-caption">DAG Airflow : vue d'ensemble d'un run réussi</div>
+                            </div>
+
+                            <div class="gallery-item full-width wide-dashboard"
+                                 role="button" tabindex="0"
+                                 aria-label="Agrandir : Historique des runs Airflow">
+                                <img src="https://diakhaby-data.github.io/retailflow-airflow-history.png"
+                                     alt="Historique des runs Airflow"
+                                     loading="lazy" decoding="async"
+                                     data-caption="Historique des exécutions sur plusieurs jours, avec des runs planifiés automatiquement en plus des déclenchements manuels : preuve que le pipeline tourne en continu.">
+                                <div class="gallery-caption">Airflow : historique des exécutions planifiées</div>
+                            </div>
+
+                            <div class="gallery-item full-width wide-dashboard"
+                                 role="button" tabindex="0"
+                                 aria-label="Agrandir : Documentation Swagger de l'API">
+                                <img src="https://diakhaby-data.github.io/retailflow-api-docs.png"
+                                     alt="Documentation Swagger de l'API RetailFlow"
+                                     loading="lazy" decoding="async"
+                                     data-caption="Interface Swagger générée par FastAPI, avec l'ensemble des endpoints de consultation (clients, ventes, stock) et les schémas de données typés.">
+                                <div class="gallery-caption">API FastAPI : documentation Swagger</div>
+                            </div>
+
+                            <div class="gallery-item full-width wide-dashboard"
+                                 role="button" tabindex="0"
+                                 aria-label="Agrandir : Dashboard Grafana, santé du pipeline">
+                                <img src="https://diakhaby-data.github.io/retailflow-grafana-pipeline.png"
+                                     alt="Dashboard Grafana, santé du pipeline"
+                                     loading="lazy" decoding="async"
+                                     data-caption="Supervision du pipeline : temps depuis le dernier succès, résultats des tests dbt, volumes ingérés et taux de qualité par table.">
+                                <div class="gallery-caption">Grafana : supervision du pipeline</div>
+                            </div>
+
+                            <div class="gallery-item full-width wide-dashboard"
+                                 role="button" tabindex="0"
+                                 aria-label="Agrandir : Dashboard Grafana, métriques de l'API">
+                                <img src="https://diakhaby-data.github.io/retailflow-grafana-api.png"
+                                     alt="Dashboard Grafana, métriques de l'API"
+                                     loading="lazy" decoding="async"
+                                     data-caption="Supervision de l'API en production : trafic par route, latence (P50/P95/P99), erreurs HTTP et consommation ressources.">
+                                <div class="gallery-caption">Grafana : métriques de l'API en production</div>
+                            </div>
+
+                            <div class="gallery-item full-width wide-dashboard"
+                                 role="button" tabindex="0"
+                                 aria-label="Agrandir : Dashboard Metabase, vue d'ensemble métier">
+                                <img src="https://diakhaby-data.github.io/retailflow-metabase.png"
+                                     alt="Dashboard Metabase, vue d'ensemble métier"
+                                     loading="lazy" decoding="async"
+                                     data-caption="Dashboard BI construit sur les marts dbt : chiffre d'affaires, répartition géographique et par catégorie, segmentation clients, santé du stock.">
+                                <div class="gallery-caption">Metabase : dashboard BI métier</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-section">
+                        <h4>Stack technique</h4>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Apache Airflow</span>
+                            <span class="tag">dbt</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Prometheus</span>
+                            <span class="tag">Grafana</span>
+                            <span class="tag">Metabase</span>
+                            <span class="tag">GitHub Actions</span>
+                            <span class="tag">CI/CD</span>
+                        </div>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://github.com/Diakhaby-data/retailflow"
+                           class="project-btn"
+                           target="_blank" rel="noopener noreferrer">Voir le projet sur GitHub</a>
+                        <a href="https://github.com/Diakhaby-data"
+                           class="project-btn"
+                           target="_blank" rel="noopener noreferrer">Tous mes repositories</a>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title-light section-title-spaced">Projet Secondaire</h2>
+
+            <div class="project-featured">
+                <div class="project-header">
+                    <div class="project-badge">Analyse de sentiment client</div>
                     <h3>Pipeline d'analyse de satisfaction client</h3>
                     <p class="subtitle">ShowroomPrivé : du scraping au dashboard décisionnel</p>
                 </div>
