@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mamadou Diakhaby, Data Engineer à Paris. Pipelines de données orchestrés, testés et supervisés, de l'ingestion au tableau de bord.">
+    <meta name="description" content="Mamadou DIAKHABY, Data Engineer : conception de pipelines ETL/ELT robustes, automatisés et testés, de l'ingestion au dashboard.">
     <meta name="theme-color" content="#F4F5F3">
 
-    <meta property="og:title" content="Mamadou Diakhaby, Data Engineer">
-    <meta property="og:description" content="Pipelines de données orchestrés, testés et supervisés, de l'ingestion au tableau de bord.">
+    <meta property="og:title" content="Mamadou DIAKHABY, Data Engineer">
+    <meta property="og:description" content="Conception de pipelines ETL/ELT robustes, automatisés et testés, de l'ingestion au dashboard.">
     <meta property="og:image" content="https://diakhaby-data.github.io/portrait.png">
     <meta property="og:url" content="https://diakhaby-data.github.io/">
     <meta property="og:type" content="profile">
@@ -708,6 +708,51 @@
             @keyframes lb-in { from { opacity: 0; transform: scale(0.985); } to { opacity: 1; transform: none; } }
         }
 
+        /* Ajouts pour le contenu d'origine */
+        .prose-after { margin-top: 2.5rem; }
+        .project-block { margin-top: 2.5rem; margin-bottom: 0.75rem; }
+        .project-head + .project-block { margin-top: 2rem; }
+        .project-context { margin-top: 0; }
+        .flow-caption { margin: 0 0 0.75rem; font-size: 0.95rem; color: var(--ink-2); }
+        .flow-caption + .flow { margin-top: 0; }
+        .flow-plain li { justify-content: center; min-height: 3.5rem; }
+        .project-cols { margin-top: 1.75rem; }
+        .project-cols .arch:first-child { margin-top: 0; }
+
+        .metrics { margin-top: 0.6rem; }
+        .spec .metrics div { grid-template-columns: 6.5rem minmax(0, 1fr); align-items: baseline; }
+        .metrics dt {
+            color: var(--accent-ink);
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -0.01em;
+            font-variant-numeric: tabular-nums;
+        }
+        .metrics dd { font-weight: 400; color: var(--ink-2); font-size: 0.925rem; }
+
+        .skill-items { list-style: none; display: flex; flex-wrap: wrap; gap: 0.35rem 0; }
+        .skill-items li:not(:last-child)::after { content: "/"; margin-inline: 0.6rem; color: var(--rule-strong); }
+
+        .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.45rem; }
+        .tags li {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--ink);
+            background: var(--surface);
+            border: 1px solid var(--rule);
+            border-radius: 4px;
+            padding: 0.25rem 0.6rem;
+        }
+        .tags-small { margin-top: 1rem; }
+        .tags-small li { font-size: 0.8rem; padding: 0.2rem 0.5rem; }
+        .project-links { margin-top: 2rem; }
+
+        .contact-intro p + p { margin-top: 0.8rem; }
+        .contact-intro strong { color: #fff; }
+        .contact-list li { grid-template-columns: 1fr; }
+        .site-footer a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.25); }
+        .site-footer a:hover { color: #fff; }
+
         /* Justification des paragraphes de lecture.
            Activée seulement quand la colonne est assez large, avec césure française
            pour éviter les espaces irréguliers (« rivières »). Les listes à intitulé
@@ -849,7 +894,7 @@
             .shots { grid-template-columns: 1fr; }
             .shot.wide { grid-column: auto; }
             .shot.wide .shot-media { aspect-ratio: 16 / 10; }
-            .spec div { grid-template-columns: 1fr; gap: 0.1rem; }
+            .spec div, .spec .metrics div { grid-template-columns: 1fr; gap: 0.1rem; }
         }
     </style>
 </head>
@@ -876,18 +921,18 @@
 
     <header class="site-header">
         <div class="wrap header-inner">
-            <a class="wordmark" href="#accueil">Mamadou Diakhaby</a>
+            <a class="wordmark" href="#accueil">Mamadou DIAKHABY</a>
             <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
                 <span class="nav-toggle-bars" aria-hidden="true"></span>Menu
             </button>
             <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
                 <ul>
+                    <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#a-propos">À propos</a></li>
                     <li><a href="#parcours">Parcours</a></li>
                     <li><a href="#competences">Compétences</a></li>
                     <li><a href="#projets">Projets</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a class="nav-cv" href="https://diakhaby-data.github.io/CV_Mamadou_Diakhaby_Data_Engineer.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a></li>
                 </ul>
             </nav>
         </div>
@@ -897,26 +942,25 @@
         <section id="accueil" class="hero" aria-labelledby="titre-accueil">
             <div class="wrap hero-grid">
                 <div>
-                    <h1 id="titre-accueil" class="reveal" style="--i:0">Mamadou<br>Diakhaby</h1>
+                    <h1 id="titre-accueil" class="reveal" style="--i:0">Mamadou<br>DIAKHABY</h1>
                     <span class="hero-strata reveal" style="--i:1" aria-hidden="true"><i class="s-geo"></i><i class="s-rse"></i><i class="s-lab"></i><i class="s-data"></i></span>
                     <p class="hero-role reveal" style="--i:1">Data Engineer</p>
                     <p class="hero-lede reveal" style="--i:2">
-                        Je construis des pipelines de données orchestrés, testés et supervisés, de l'ingestion jusqu'au tableau de bord.
-                        Près de cinq ans d'analyse en laboratoire accrédité ISO m'ont appris à rendre chaque résultat traçable&nbsp;:
-                        j'applique la même exigence à la donnée.
+                        Conception de pipelines ETL/ELT de bout en bout,<br>
+                        de l'ingestion automatisée jusqu'au monitoring en production.
                     </p>
                     <div class="hero-actions reveal" style="--i:3">
-                        <a href="#retailflow" class="btn btn-primary">Voir le projet RetailFlow</a>
+                        <a href="#projets" class="btn btn-primary">Voir mon projet principal</a>
                         <a href="#contact" class="btn btn-ghost">Me contacter</a>
                     </div>
                     <ul class="hero-meta reveal" style="--i:4">
                         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>Paris, Île-de-France</li>
-                        <li><span class="status-dot" aria-hidden="true"></span>Ouvert à un CDI</li>
+                        <li><span class="status-dot" aria-hidden="true"></span>Data Engineer, disponible pour CDI</li>
                     </ul>
                 </div>
                 <figure class="portrait reveal" style="--i:1">
                     <img src="https://diakhaby-data.github.io/portrait.png"
-                         alt="Portrait de Mamadou Diakhaby"
+                         alt="Mamadou DIAKHABY"
                          width="480" height="600"
                          onerror="this.closest('figure').hidden = true">
                 </figure>
@@ -927,47 +971,55 @@
             <div class="wrap split">
                 <div class="split-head">
                     <h2 id="titre-apropos">À propos</h2>
-                    <p class="section-note">Du microscope au pipeline&nbsp;: la même discipline, appliquée à un autre matériau.</p>
                 </div>
                 <div>
                     <div class="prose">
                         <p>
-                            Depuis février 2022, j'analyse des matériaux de construction et des filtres d'air pour y détecter des fibres d'amiante,
-                            en microscopie optique et électronique, sous accréditation ISO. Environ 1 100 échantillons par mois, chacun suivi
-                            de la réception jusqu'au rapport. C'est là que j'ai compris ce qu'un pipeline de données exige aussi&nbsp;:
-                            des étapes reproductibles, un contrôle à chaque passage et des résultats dont on peut répondre.
+                            Avant de coder mon premier pipeline, j'analysais des fibres d'amiante à la microscopie électronique.
+                            Quatre ans à traiter des volumes importants de données sous protocole ISO strict m'ont appris ce que peu de formations transmettent&nbsp;:
+                            la culture de la rigueur, de la traçabilité et de la responsabilité sur chaque résultat produit.
+                            C'est cet état d'esprit que j'applique aujourd'hui à l'ingénierie des données.
                         </p>
                         <p>
-                            En 2025, j'ai obtenu le certificat Data Engineer de Mines Paris PSL Executive Education, en partenariat avec DataScientest.
-                            J'ai depuis construit deux plateformes complètes. <strong>RetailFlow</strong> orchestre avec Airflow et dbt l'ingestion,
+                            Formé chez Mines Paris – PSL Executive Education en partenariat avec DataScientest, j'ai depuis construit plusieurs pipelines
+                            complets, de l'ingestion à la restitution décisionnelle. RetailFlow, mon projet phare, orchestre avec Airflow et dbt l'ingestion,
                             la transformation et la supervision d'une plateforme data e-commerce, jusqu'à l'API et aux dashboards Grafana et Metabase.
-                            Le second projet analyse la satisfaction client de ShowroomPrivé, du scraping des avis jusqu'à un modèle NLP exposé par API.
+                            J'ai également développé un pipeline d'analyse de satisfaction client combinant scraping, machine learning (NLP) et API REST.
+                            Dans les deux cas, chaque étape est orchestrée, testée et documentée.
                         </p>
                         <p>
-                            Je cherche un CDI de Data Engineer dans une équipe qui traite la qualité des données comme un sujet d'ingénierie,
-                            et non comme une vérification de fin de chaîne.
+                            Je cherche un poste de Data Engineer en CDI où je peux contribuer à des projets data concrets, dans une équipe qui
+                            prend la qualité des données autant au sérieux que moi.
                         </p>
                     </div>
 
-                    <h3 class="traits-title">Ce que vous trouverez dans mes dépôts</h3>
+                    <h3 class="traits-title">Ce que vous trouverez dans mon code</h3>
                     <ul class="traits">
                         <li>
-                            <h4>Des pipelines testés</h4>
-                            <p>Code Python découpé en modules indépendants, tests pytest, formatage Black et linting Flake8.</p>
+                            <h4>Des pipelines testés et reproductibles</h4>
+                            <p>Architecture modulaire Python, tests automatisés, formatage et linting systématiques.</p>
                         </li>
                         <li>
-                            <h4>La chaîne complète</h4>
-                            <p>De la collecte (scraping, API) à l'exposition (FastAPI, Metabase, Grafana), chaque brique est reliée et supervisée.</p>
+                            <h4>Une vision end-to-end assumée</h4>
+                            <p>De l'ingestion (scraping, APIs, orchestration) à l'exposition (FastAPI, BI, Grafana), chaque brique est connectée et monitorée.</p>
                         </li>
                         <li>
-                            <h4>Un environnement reproductible</h4>
-                            <p>Docker Compose multi-services, intégration continue GitHub Actions, exécutions planifiées et historisées.</p>
+                            <h4>Une infrastructure qui tient en production</h4>
+                            <p>Docker Compose multi-services, CI/CD GitHub Actions, pipelines planifiés et historisés dans le temps.</p>
                         </li>
                         <li>
-                            <h4>Une documentation exploitable</h4>
-                            <p>README technique, schémas d'architecture, captures commentées et contrat OpenAPI.</p>
+                            <h4>De la documentation qui sert à quelque chose</h4>
+                            <p>README technique, diagrammes d'architecture, captures d'écran commentées, OpenAPI/Swagger.</p>
                         </li>
                     </ul>
+
+                    <div class="prose prose-after">
+                        <p>
+                            Mon parcours est atypique&nbsp;: géologie, RSE, laboratoire scientifique, puis data engineering.
+                            Cette diversité est une force&nbsp;: je sais travailler avec des contraintes réglementaires strictes,
+                            communiquer des résultats à des non-techniciens et m'adapter rapidement à de nouveaux domaines.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -975,7 +1027,7 @@
         <section id="parcours" class="section" aria-labelledby="titre-parcours">
             <div class="wrap split">
                 <div class="split-head">
-                    <h2 id="titre-parcours">Parcours</h2>
+                    <h2 id="titre-parcours">Parcours et Formation</h2>
                     <p class="section-note">
                         Géologue de formation, j'ai complété mon cursus par un master RSE centré sur l'audit et les normes ISO.
                         Depuis 2022, j'analyse des échantillons d'amiante chez ITGA, en laboratoire accrédité.
@@ -988,16 +1040,16 @@
                         <span class="layer-band band-data" aria-hidden="true"><span class="glyph"><svg><use href="#i-chip"/></svg></span><span class="glyph"><svg><use href="#i-dag"/></svg></span><span class="glyph"><svg><use href="#i-db"/></svg></span></span>
                         <div class="layer-body">
                             <h3>Certificat Data Engineer</h3>
-                            <p class="layer-org">Mines Paris PSL Executive Education, avec DataScientest, Paris</p>
-                            <p class="layer-period">Juillet à octobre 2025, formation intensive de 4 mois</p>
-                            <p>Conception et industrialisation de pipelines ETL et ELT, de l'ingestion à la livraison des données.</p>
+                            <p class="layer-org">Mines Paris – PSL Executive Education, en partenariat avec DataScientest, Paris</p>
+                            <p class="layer-period">Juillet 2025 – Octobre 2025, 4 mois</p>
+                            <p>Formation intensive axée sur la conception et l'industrialisation de pipelines ETL/ELT, de l'ingestion à la livraison des données.</p>
                             <ul class="layer-list">
-                                <li><strong>Langages&nbsp;:</strong> Python, Scala, SQL</li>
-                                <li><strong>Bases de données&nbsp;:</strong> MySQL, PostgreSQL, MongoDB, Cassandra</li>
-                                <li><strong>Big Data&nbsp;:</strong> Apache Spark (PySpark), Apache Kafka</li>
-                                <li><strong>Orchestration&nbsp;:</strong> Apache Airflow, dbt</li>
-                                <li><strong>Infrastructure&nbsp;:</strong> Linux, Bash, Docker, Git, GitHub, GitLab, CI/CD</li>
-                                <li><strong>Cloud&nbsp;:</strong> AWS S3, Azure</li>
+                                <li><strong>Langages&nbsp;:</strong> Python, Scala, SQL.</li>
+                                <li><strong>Bases de données&nbsp;:</strong> MySQL, PostgreSQL, MongoDB, Cassandra.</li>
+                                <li><strong>Big Data&nbsp;:</strong> Apache Spark (PySpark), Apache Kafka.</li>
+                                <li><strong>Orchestration&nbsp;:</strong> Apache Airflow, DBT.</li>
+                                <li><strong>Infrastructure&nbsp;:</strong> Linux, Bash, Docker, Git, GitHub, GitLab, CI/CD.</li>
+                                <li><strong>Cloud&nbsp;:</strong> AWS S3, Azure.</li>
                             </ul>
                         </div>
                     </li>
@@ -1005,21 +1057,21 @@
                     <li class="layer">
                         <span class="layer-band band-lab" aria-hidden="true"><span class="glyph"><svg><use href="#i-microscope"/></svg></span><span class="glyph"><svg><use href="#i-tem"/></svg></span><span class="glyph"><svg><use href="#i-slide"/></svg></span></span>
                         <div class="layer-body">
-                            <h3>Analyste MOLP et MET, formateur</h3>
-                            <p class="layer-org">ITGA, CDI, Paris</p>
-                            <p class="layer-period">Depuis février 2022</p>
+                            <h3>Analyste MOLP/MET et Formateur</h3>
+                            <p class="layer-org">ITGA, CDI</p>
+                            <p class="layer-period">Février 2022 – aujourd'hui (bientôt 5 ans) Paris</p>
                             <p>
-                                Analyse de matériaux de construction et de filtres d'air pour la détection des fibres d'amiante,
+                                Analyse de matériaux de construction et filtres d'air pour la détection des fibres d'amiante
                                 par microscopie optique (MOLP) et électronique à transmission (MET).
                             </p>
                             <ul class="layer-list">
-                                <li><strong>Production et qualité&nbsp;:</strong> 13 000 échantillons analysés par an, conformité supérieure à 99 % aux protocoles ISO.</li>
-                                <li><strong>Gestion de données&nbsp;:</strong> traçabilité complète des résultats, détection de valeurs anormales, reporting sous contraintes réglementaires.</li>
-                                <li><strong>Transmission&nbsp;:</strong> formation des nouveaux analystes aux protocoles techniques et administratifs.</li>
+                                <li><strong>Production et qualité&nbsp;:</strong> 13 000 échantillons analysés par an (1 100 par mois), conformité supérieure à 99 % aux protocoles ISO.</li>
+                                <li><strong>Gestion de données&nbsp;:</strong> traçabilité exhaustive des résultats, détection de patterns anormaux, reporting précis sous contraintes réglementaires.</li>
+                                <li><strong>Transmission&nbsp;:</strong> formation et montée en compétences des nouveaux analystes sur les protocoles techniques et administratifs.</li>
                             </ul>
                             <p class="layer-aside">
-                                Un protocole de laboratoire et un pipeline de données obéissent à la même logique&nbsp;: chaque étape doit être traçable,
-                                reproductible et documentée. J'appliquais cette règle bien avant d'écrire mon premier test pytest.
+                                <em>La rigueur d'un protocole de laboratoire et celle d'un pipeline de données répondent à la même logique&nbsp;:
+                                chaque étape doit être traçable, reproductible et documentée. Cette exigence, je l'ai intégrée bien avant de découvrir pytest.</em>
                             </p>
                         </div>
                     </li>
@@ -1027,12 +1079,12 @@
                     <li class="layer">
                         <span class="layer-band band-rse" aria-hidden="true"><span class="glyph"><svg><use href="#i-audit"/></svg></span><span class="glyph"><svg><use href="#i-leaf"/></svg></span></span>
                         <div class="layer-body">
-                            <h3>Master Responsabilité sociétale des entreprises</h3>
-                            <p class="layer-org">Université de Versailles Saint-Quentin-en-Yvelines (UVSQ)</p>
-                            <p class="layer-period">2018 à 2019</p>
+                            <h3>Master en Responsabilité Sociétale des Entreprises</h3>
+                            <p class="layer-org">Université de Versailles Saint-Quentin-en-Yvelines (UVSQ), Paris</p>
+                            <p class="layer-period">2018 – 2019</p>
                             <p>
-                                Gouvernance et gestion des risques, audits internes et externes, veille réglementaire et technique,
-                                principes des normes ISO 9001 et ISO 26000.
+                                Gouvernance et gestion des risques, conduite d'audits internes et externes, veille réglementaire et technique.
+                                Principes de certification ISO 9001 et ISO 26000.
                             </p>
                         </div>
                     </li>
@@ -1040,12 +1092,11 @@
                     <li class="layer">
                         <span class="layer-band band-geo" aria-hidden="true"><span class="glyph"><svg><use href="#i-hammer"/></svg></span><span class="glyph"><svg><use href="#i-crystal"/></svg></span><span class="glyph"><svg><use href="#i-section"/></svg></span></span>
                         <div class="layer-body">
-                            <h3>Master Géologie</h3>
+                            <h3>Master en Géologie</h3>
                             <p class="layer-org">Université de Rennes 1</p>
-                            <p class="layer-period">2016 à 2018</p>
+                            <p class="layer-period">2016 – 2018</p>
                             <p>
-                                Exploration et prospection des ressources minérales et pétrolières,
-                                gestion des risques naturels et analyse géologique.
+                                Exploration et prospection des ressources minérales et pétrolières, gestion des risques naturels et analyse géologique.
                             </p>
                         </div>
                     </li>
@@ -1056,18 +1107,17 @@
         <section id="competences" class="section" aria-labelledby="titre-competences">
             <div class="wrap split">
                 <div class="split-head">
-                    <h2 id="titre-competences">Compétences techniques</h2>
-                    <p class="section-note">Les outils que j'ai mis en œuvre dans mes projets et pendant ma formation.</p>
+                    <h2 id="titre-competences">Compétences Techniques</h2>
                 </div>
                 <dl class="skills">
-                    <div class="skills-row"><dt>Langages</dt><dd>Python, SQL, Scala, Bash</dd></div>
-                    <div class="skills-row"><dt>Bases de données</dt><dd>PostgreSQL, MySQL, MongoDB, Cassandra, Snowflake</dd></div>
-                    <div class="skills-row"><dt>Big Data</dt><dd>Apache Spark (PySpark), Spark Streaming, Apache Kafka</dd></div>
-                    <div class="skills-row"><dt>ETL et orchestration</dt><dd>Apache Airflow, dbt, modélisation dimensionnelle (schéma en étoile)</dd></div>
-                    <div class="skills-row"><dt>Infrastructure et DevOps</dt><dd>Linux, Docker, Kubernetes, Git (GitHub, GitLab), CI/CD (GitHub Actions, GitLab CI), pytest</dd></div>
-                    <div class="skills-row"><dt>Monitoring et BI</dt><dd>Prometheus, Grafana, StatsD, Metabase</dd></div>
-                    <div class="skills-row"><dt>Cloud</dt><dd>AWS S3, Azure</dd></div>
-                    <div class="skills-row"><dt>API et machine learning</dt><dd>FastAPI, scikit-learn, TF-IDF, CamemBERT</dd></div>
+                    <div class="skills-row"><dt>Langages</dt><dd><ul class="skill-items"><li>Python</li><li>SQL</li><li>Scala</li><li>Bash</li></ul></dd></div>
+                    <div class="skills-row"><dt>Bases de données</dt><dd><ul class="skill-items"><li>MySQL, PostgreSQL</li><li>MongoDB</li><li>Cassandra</li><li>Snowflake</li></ul></dd></div>
+                    <div class="skills-row"><dt>Big Data</dt><dd><ul class="skill-items"><li>Apache Spark (PySpark)</li><li>Spark Streaming</li><li>Apache Kafka</li></ul></dd></div>
+                    <div class="skills-row"><dt>ETL et Orchestration</dt><dd><ul class="skill-items"><li>Apache Airflow</li><li>DBT</li><li>Modélisation dimensionnelle (star schema)</li></ul></dd></div>
+                    <div class="skills-row"><dt>Infrastructure et DevOps</dt><dd><ul class="skill-items"><li>Linux et Bash</li><li>Docker et Kubernetes</li><li>Git, GitHub, GitLab</li><li>CI/CD (GitLab CI, GitHub Actions)</li><li>Tests unitaires (pytest)</li></ul></dd></div>
+                    <div class="skills-row"><dt>Monitoring &amp; BI</dt><dd><ul class="skill-items"><li>Prometheus</li><li>Grafana</li><li>StatsD</li><li>Metabase</li></ul></dd></div>
+                    <div class="skills-row"><dt>Cloud</dt><dd><ul class="skill-items"><li>AWS S3</li><li>Azure</li></ul></dd></div>
+                    <div class="skills-row"><dt>APIs et ML</dt><dd><ul class="skill-items"><li>FastAPI</li><li>scikit-learn</li><li>TF-IDF</li><li>CamemBERT</li></ul></dd></div>
                 </dl>
             </div>
         </section>
@@ -1076,263 +1126,293 @@
             <div class="wrap">
                 <div class="projects-head">
                     <h2 id="titre-projets">Projets</h2>
-                    <p class="section-note">Deux plateformes construites de bout en bout, avec le code, les schémas et les captures pour les vérifier.</p>
                 </div>
 
                 <!-- RetailFlow -->
                 <article id="retailflow" class="project" aria-labelledby="titre-retailflow">
                     <div class="project-head">
                         <div>
-                            <p class="project-flag">Projet principal</p>
+                            <p class="project-flag">Projet phare</p>
                             <h3 id="titre-retailflow">RetailFlow, plateforme data e-commerce</h3>
-                            <p class="project-sub">De l'ingestion multi-source à la restitution décisionnelle, un pipeline orchestré de bout en bout.</p>
-                        </div>
-                        <div class="project-actions">
-                            <a class="btn btn-primary" href="https://github.com/Diakhaby-data/retailflow" target="_blank" rel="noopener noreferrer">Code sur GitHub</a>
+                            <p class="project-sub">De l'ingestion multi-source à la restitution décisionnelle, un pipeline orchestré de bout en bout</p>
                         </div>
                     </div>
 
+                    <h4 class="block-title project-block">Contexte et problématique</h4>
                     <p class="project-context">
                         RetailFlow reproduit la chaîne de valeur data d'une entreprise e-commerce&nbsp;: transformer des données brutes et dispersées
-                        en indicateurs fiables pour les équipes métier, sans intervention manuelle une fois le pipeline lancé.
-                        L'objectif était de construire une architecture comparable à celles des équipes data en entreprise, avec orchestration,
-                        tests de qualité, supervision et restitution BI, plutôt qu'un notebook exécuté une seule fois.
+                        en indicateurs fiables, exploitables par les équipes métier, sans intervention manuelle une fois le pipeline lancé.
+                        L'objectif du projet&nbsp;: construire une architecture data telle qu'on la retrouve en entreprise, avec orchestration,
+                        tests de qualité, supervision et restitution BI, pas un notebook isolé qui tourne une seule fois.
                     </p>
 
-                    <ol class="flow" style="--n:6" aria-label="Étapes du pipeline RetailFlow">
-                        <li><span class="flow-role">Ingestion</span><span class="flow-tool">4 sources</span></li>
+                    <h4 class="block-title project-block">Architecture et pipeline</h4>
+                    <p class="flow-caption"><strong>Pipeline de bout en bout&nbsp;:</strong></p>
+                    <ol class="flow" style="--n:6" aria-label="Pipeline de bout en bout&nbsp;: Ingestion multi-source, Airflow (orchestration), PostgreSQL (entrepôt), dbt (transformation), FastAPI (exposition), Prometheus / Grafana / Metabase (supervision et restitution)">
+                        <li><span class="flow-role">&nbsp;</span><span class="flow-tool">Ingestion multi-source</span></li>
                         <li><span class="flow-role">Orchestration</span><span class="flow-tool">Airflow</span></li>
                         <li><span class="flow-role">Entrepôt</span><span class="flow-tool">PostgreSQL</span></li>
                         <li><span class="flow-role">Transformation</span><span class="flow-tool">dbt</span></li>
                         <li><span class="flow-role">Exposition</span><span class="flow-tool">FastAPI</span></li>
-                        <li><span class="flow-role">Supervision et BI</span><span class="flow-tool">Grafana, Metabase</span></li>
+                        <li><span class="flow-role">Supervision et restitution</span><span class="flow-tool">Prometheus / Grafana / Metabase</span></li>
                     </ol>
 
                     <div class="project-cols">
                         <div>
-                            <h4 class="block-title">Architecture</h4>
                             <ul class="arch">
-                                <li><strong>Ingestion&nbsp;:</strong> le DAG Airflow <code>retailflow_pipeline</code> (16 tâches) ingère 4 sources distinctes et valide leur qualité avant de charger l'entrepôt.</li>
-                                <li><strong>Transformation&nbsp;:</strong> modélisation en couches avec dbt (staging, puis marts), tests dbt intégrés au DAG.</li>
-                                <li><strong>Entrepôt&nbsp;:</strong> PostgreSQL, interrogé directement par Metabase.</li>
-                                <li><strong>API&nbsp;:</strong> FastAPI expose les données clients, ventes et stock, documentées automatiquement via Swagger.</li>
-                                <li><strong>Orchestration&nbsp;:</strong> exécutions planifiées en plus des déclenchements manuels, historisées sur plusieurs jours.</li>
-                                <li><strong>Infrastructure&nbsp;:</strong> Docker Compose, 8 services (orchestrateur, API, entrepôt, BI, monitoring).</li>
-                                <li><strong>Observabilité&nbsp;:</strong> Prometheus et Grafana suivent la santé du pipeline (fraîcheur des données, tests dbt, volumes et qualité par table) et l'API (trafic par route, latence P50, P95 et P99, erreurs HTTP, ressources).</li>
-                                <li><strong>BI&nbsp;:</strong> dashboard Metabase sur les marts dbt&nbsp;: chiffre d'affaires, répartition géographique et par catégorie, segmentation clients, santé du stock par jauge à seuils.</li>
-                                <li><strong>CI/CD&nbsp;:</strong> workflow GitHub Actions déclenché à chaque push (build et vérifications).</li>
+                                <li><strong>Ingestion&nbsp;:</strong> DAG Airflow <code>retailflow_pipeline</code> de 16 tâches, qui ingère automatiquement 4 sources de données distinctes et valide leur qualité avant de charger l'entrepôt.</li>
+                                <li><strong>Transformation&nbsp;:</strong> modélisation en couches avec dbt (staging puis marts), tests de qualité dbt intégrés directement au DAG.</li>
+                                <li><strong>Entrepôt&nbsp;:</strong> PostgreSQL, interrogé nativement par Metabase pour la restitution décisionnelle.</li>
+                                <li><strong>API&nbsp;:</strong> FastAPI exposant les données clients, ventes et stock, documentée automatiquement via Swagger.</li>
+                                <li><strong>Orchestration&nbsp;:</strong> exécutions planifiées automatiquement en plus des déclenchements manuels, historisées sur plusieurs jours&nbsp;: le pipeline tourne en continu, pas à la demande.</li>
+                                <li><strong>Infrastructure&nbsp;:</strong> Docker Compose multi-services (8 services&nbsp;: orchestrateur, API, entrepôt, BI, monitoring).</li>
+                                <li><strong>Observabilité&nbsp;:</strong> Prometheus et Grafana supervisent à la fois la santé du pipeline (fraîcheur des données, résultats des tests dbt, volumes et qualité par table) et l'API en production (trafic par route, latence P50/P95/P99, erreurs HTTP, ressources).</li>
+                                <li><strong>BI&nbsp;:</strong> dashboard Metabase construit sur les marts dbt&nbsp;: chiffre d'affaires, répartition géographique et par catégorie, segmentation clients, santé du stock visualisée via une jauge à seuils.</li>
+                            </ul>
+
+                            <h4 class="block-title project-block">Qualité et DevOps</h4>
+                            <ul class="arch">
+                                <li><strong>CI/CD&nbsp;:</strong> pipeline GitHub Actions déclenché à chaque push (build, vérifications).</li>
+                                <li><strong>Conteneurisation&nbsp;:</strong> l'ensemble des services est décrit dans un Docker Compose unique, environnement reproductible en une commande.</li>
+                                <li><strong>Qualité des données&nbsp;:</strong> validation automatique intégrée au DAG avant chargement de l'entrepôt, complétée par les tests dbt sur les modèles.</li>
+                                <li><strong>Documentation&nbsp;:</strong> README technique détaillé (architecture, stack, liste des services et ports, captures d'écran commentées).</li>
                             </ul>
                         </div>
                         <aside class="spec" aria-labelledby="spec-retailflow">
-                            <h4 id="spec-retailflow" class="block-title">Fiche technique</h4>
-                            <dl>
-                                <div><dt>DAG Airflow</dt><dd>16 tâches, de l'ingestion à la notification</dd></div>
-                                <div><dt>Sources</dt><dd>4, validées à chaque exécution</dd></div>
-                                <div><dt>Services Docker</dt><dd>8, lancés en une commande</dd></div>
-                                <div><dt>Exécutions</dt><dd>Planifiées et manuelles, historisées</dd></div>
-                                <div><dt>Contrôle qualité</dt><dd>Validation avant chargement, tests dbt</dd></div>
-                                <div><dt>Documentation</dt><dd>README, services et ports, captures</dd></div>
+                            <h4 id="spec-retailflow" class="block-title">Résultats mesurés</h4>
+                            <dl class="metrics">
+                                <div><dt>16</dt><dd>tâches orchestrées dans le DAG Airflow, de l'ingestion à la notification finale.</dd></div>
+                                <div><dt>4</dt><dd>sources de données ingérées et validées automatiquement à chaque run.</dd></div>
+                                <div><dt>8</dt><dd>services dockerisés (orchestrateur, API, entrepôt, BI, monitoring) démarrés en une commande.</dd></div>
+                                <div><dt>Continu</dt><dd>runs planifiés automatiquement en plus des déclenchements manuels, historisés sur plusieurs jours.</dd></div>
                             </dl>
                         </aside>
                     </div>
 
-                    <h4 class="block-title shots-title">Captures du pipeline en fonctionnement</h4>
+                    <h4 class="block-title shots-title">Aperçu du pipeline</h4>
                     <div class="shots">
-                        <button type="button" class="shot wide" aria-label="Agrandir la capture&nbsp;: DAG Airflow retailflow_pipeline">
+                        <button type="button" class="shot wide" aria-label="Agrandir&nbsp;: DAG Airflow retailflow_pipeline">
                             <span class="shot-media">
                                 <img src="https://diakhaby-data.github.io/retailflow-airflow-dag.png"
-                                     alt="DAG Airflow retailflow_pipeline après un run réussi"
+                                     alt="DAG Airflow retailflow_pipeline"
                                      loading="lazy" decoding="async"
                                      data-caption="Le DAG retailflow_pipeline (16 tâches) après un run réussi&nbsp;: ingestion des 4 sources, validation qualité, chargement de l'entrepôt, transformation dbt, jusqu'à la notification finale.">
                             </span>
-                            <span class="shot-caption">Airflow&nbsp;: le DAG après un run réussi</span>
+                            <span class="shot-caption">DAG Airflow&nbsp;: vue d'ensemble d'un run réussi</span>
                         </button>
-                        <button type="button" class="shot" aria-label="Agrandir la capture&nbsp;: historique des runs Airflow">
+                        <button type="button" class="shot" aria-label="Agrandir&nbsp;: Historique des runs Airflow">
                             <span class="shot-media">
                                 <img src="https://diakhaby-data.github.io/retailflow-airflow-history.png"
-                                     alt="Historique des exécutions Airflow"
+                                     alt="Historique des runs Airflow"
                                      loading="lazy" decoding="async"
-                                     data-caption="Historique des exécutions sur plusieurs jours&nbsp;: des runs planifiés automatiquement s'ajoutent aux déclenchements manuels.">
+                                     data-caption="Historique des exécutions sur plusieurs jours, avec des runs planifiés automatiquement en plus des déclenchements manuels&nbsp;: preuve que le pipeline tourne en continu.">
                             </span>
-                            <span class="shot-caption">Airflow&nbsp;: historique des exécutions</span>
+                            <span class="shot-caption">Airflow&nbsp;: historique des exécutions planifiées</span>
                         </button>
-                        <button type="button" class="shot" aria-label="Agrandir la capture&nbsp;: documentation Swagger de l'API">
+                        <button type="button" class="shot" aria-label="Agrandir&nbsp;: Documentation Swagger de l'API">
                             <span class="shot-media">
                                 <img src="https://diakhaby-data.github.io/retailflow-api-docs.png"
                                      alt="Documentation Swagger de l'API RetailFlow"
                                      loading="lazy" decoding="async"
-                                     data-caption="Interface Swagger générée par FastAPI&nbsp;: endpoints de consultation (clients, ventes, stock) et schémas de données typés.">
+                                     data-caption="Interface Swagger générée par FastAPI, avec l'ensemble des endpoints de consultation (clients, ventes, stock) et les schémas de données typés.">
                             </span>
-                            <span class="shot-caption">FastAPI&nbsp;: documentation Swagger</span>
+                            <span class="shot-caption">API FastAPI&nbsp;: documentation Swagger</span>
                         </button>
-                        <button type="button" class="shot" aria-label="Agrandir la capture&nbsp;: Grafana, santé du pipeline">
+                        <button type="button" class="shot" aria-label="Agrandir&nbsp;: Dashboard Grafana, santé du pipeline">
                             <span class="shot-media">
                                 <img src="https://diakhaby-data.github.io/retailflow-grafana-pipeline.png"
-                                     alt="Dashboard Grafana de supervision du pipeline"
+                                     alt="Dashboard Grafana, santé du pipeline"
                                      loading="lazy" decoding="async"
                                      data-caption="Supervision du pipeline&nbsp;: temps depuis le dernier succès, résultats des tests dbt, volumes ingérés et taux de qualité par table.">
                             </span>
-                            <span class="shot-caption">Grafana&nbsp;: santé du pipeline</span>
+                            <span class="shot-caption">Grafana&nbsp;: supervision du pipeline</span>
                         </button>
-                        <button type="button" class="shot" aria-label="Agrandir la capture&nbsp;: Grafana, métriques de l'API">
+                        <button type="button" class="shot" aria-label="Agrandir&nbsp;: Dashboard Grafana, métriques de l'API">
                             <span class="shot-media">
                                 <img src="https://diakhaby-data.github.io/retailflow-grafana-api.png"
-                                     alt="Dashboard Grafana des métriques de l'API"
+                                     alt="Dashboard Grafana, métriques de l'API"
                                      loading="lazy" decoding="async"
-                                     data-caption="Supervision de l'API&nbsp;: trafic par route, latence P50, P95 et P99, erreurs HTTP et consommation de ressources.">
+                                     data-caption="Supervision de l'API en production&nbsp;: trafic par route, latence (P50/P95/P99), erreurs HTTP et consommation ressources.">
                             </span>
-                            <span class="shot-caption">Grafana&nbsp;: métriques de l'API</span>
+                            <span class="shot-caption">Grafana&nbsp;: métriques de l'API en production</span>
                         </button>
-                        <button type="button" class="shot wide" aria-label="Agrandir la capture&nbsp;: dashboard Metabase">
+                        <button type="button" class="shot wide" aria-label="Agrandir&nbsp;: Dashboard Metabase, vue d'ensemble métier">
                             <span class="shot-media">
                                 <img src="https://diakhaby-data.github.io/retailflow-metabase.png"
                                      alt="Dashboard Metabase, vue d'ensemble métier"
                                      loading="lazy" decoding="async"
                                      data-caption="Dashboard BI construit sur les marts dbt&nbsp;: chiffre d'affaires, répartition géographique et par catégorie, segmentation clients, santé du stock.">
                             </span>
-                            <span class="shot-caption">Metabase&nbsp;: dashboard métier</span>
+                            <span class="shot-caption">Metabase&nbsp;: dashboard BI métier</span>
                         </button>
                     </div>
 
-                    <p class="stack"><strong>Stack</strong>Python, SQL, Apache Airflow, dbt, PostgreSQL, FastAPI, Docker, Prometheus, Grafana, Metabase, GitHub Actions</p>
+                    <h4 class="block-title project-block">Stack technique</h4>
+                    <ul class="tags">
+                        <li>Python</li><li>SQL</li><li>Apache Airflow</li><li>dbt</li><li>PostgreSQL</li><li>FastAPI</li>
+                        <li>Docker</li><li>Prometheus</li><li>Grafana</li><li>Metabase</li><li>GitHub Actions</li><li>CI/CD</li>
+                    </ul>
+
+                    <div class="project-actions project-links">
+                        <a class="btn btn-primary" href="https://github.com/Diakhaby-data/retailflow" target="_blank" rel="noopener noreferrer">Voir le projet sur GitHub</a>
+                        <a class="btn btn-ghost" href="https://github.com/Diakhaby-data" target="_blank" rel="noopener noreferrer">Tous mes repositories</a>
+                    </div>
                 </article>
 
                 <!-- ShowroomPrivé -->
                 <article id="showroomprive" class="project" aria-labelledby="titre-showroom">
                     <div class="project-head">
                         <div>
-                            <h3 id="titre-showroom">Analyse de satisfaction client ShowroomPrivé</h3>
-                            <p class="project-sub">Du scraping des avis Trustpilot au dashboard de suivi, avec un modèle de sentiment exposé par API.</p>
-                        </div>
-                        <div class="project-actions">
-                            <a class="btn btn-ghost" href="https://github.com/Diakhaby-data/Projet_satisfaction" target="_blank" rel="noopener noreferrer">Code sur GitHub</a>
+                            <p class="project-flag">Analyse de sentiment client</p>
+                            <h3 id="titre-showroom">Pipeline d'analyse de satisfaction client</h3>
+                            <p class="project-sub">ShowroomPrivé&nbsp;: du scraping au dashboard décisionnel</p>
                         </div>
                     </div>
 
+                    <h4 class="block-title project-block">Contexte et problématique</h4>
                     <p class="project-context">
-                        ShowroomPrivé accumule des milliers d'avis clients sur Trustpilot, impossibles à lire un par un.
-                        Le pipeline automatise leur collecte, détecte les avis négatifs et alimente un tableau de bord actualisé en continu
-                        pour les équipes métier. Chaque étape, du scraping à l'alerte Prometheus, est orchestrée, testée et supervisée.
+                        ShowroomPrivé accumule des milliers d'avis clients sur Trustpilot, impossible à exploiter manuellement à cette échelle.
+                        L'objectif&nbsp;: automatiser leur collecte, détecter automatiquement les sentiments négatifs et fournir aux équipes métier
+                        un tableau de bord décisionnel actualisé en continu.
+                        Du scraping à l'alerte Prometheus, chaque étape du pipeline est orchestrée, testée et monitorée.
                     </p>
 
-                    <ol class="flow" style="--n:6" aria-label="Étapes du pipeline ShowroomPrivé">
-                        <li><span class="flow-role">Collecte</span><span class="flow-tool">Scraping</span></li>
-                        <li><span class="flow-role">Données brutes</span><span class="flow-tool">MongoDB</span></li>
-                        <li><span class="flow-role">Orchestration</span><span class="flow-tool">Airflow</span></li>
-                        <li><span class="flow-role">Base relationnelle</span><span class="flow-tool">MySQL</span></li>
-                        <li><span class="flow-role">Modèle et API</span><span class="flow-tool">NLP, FastAPI</span></li>
-                        <li><span class="flow-role">Supervision</span><span class="flow-tool">Prometheus, Grafana</span></li>
+                    <h4 class="block-title project-block">Architecture et pipeline ETL</h4>
+                    <p class="flow-caption"><strong>Pipeline de bout en bout&nbsp;:</strong></p>
+                    <ol class="flow flow-plain" style="--n:5" aria-label="Pipeline de bout en bout&nbsp;: MongoDB, Airflow, MySQL, FastAPI, Prometheus / Grafana">
+                        <li><span class="flow-tool">MongoDB</span></li>
+                        <li><span class="flow-tool">Airflow</span></li>
+                        <li><span class="flow-tool">MySQL</span></li>
+                        <li><span class="flow-tool">FastAPI</span></li>
+                        <li><span class="flow-tool">Prometheus / Grafana</span></li>
                     </ol>
 
                     <div class="project-cols">
                         <div>
-                            <h4 class="block-title">Architecture</h4>
                             <ul class="arch">
-                                <li><strong>Ingestion&nbsp;:</strong> 20 259 avis collectés avec BeautifulSoup, migration de MongoDB vers MySQL orchestrée par Airflow (98,7 % d'intégrité).</li>
+                                <li><strong>Ingestion&nbsp;:</strong> scraping de 20 259 avis via BeautifulSoup, migration des données brutes de MongoDB vers MySQL orchestrée par Airflow (98,7 % d'intégrité).</li>
                                 <li><strong>Modélisation&nbsp;:</strong> schéma relationnel optimisé, scripts de transformation et tests de qualité des données.</li>
-                                <li><strong>Machine learning&nbsp;:</strong> TF-IDF, régression logistique, Random Forest, SVM et CamemBERT comparés ; réentraînement automatique.</li>
-                                <li><strong>API REST&nbsp;:</strong> FastAPI, endpoints <code>/predict</code>, <code>/stats</code> et health check, documentation Swagger.</li>
-                                <li><strong>Orchestration&nbsp;:</strong> DAG de 7 tâches&nbsp;: scraping, nettoyage, agrégation, stockage, reporting, alertes, ML.</li>
+                                <li><strong>Machine learning&nbsp;:</strong> analyse de sentiments avec TF-IDF, régression logistique, Random Forest, SVM et CamemBERT. Réentraînement automatique, F1-score de 0,92.</li>
+                                <li><strong>API REST&nbsp;:</strong> FastAPI avec documentation Swagger, endpoints /predict, /stats et health check, latence inférieure à 200 ms.</li>
+                                <li><strong>Orchestration&nbsp;:</strong> DAG Airflow à 7 tâches (scraping, nettoyage, agrégation, stockage, reporting, alertes, ML).</li>
                                 <li><strong>Infrastructure&nbsp;:</strong> Docker Compose multi-services (MySQL, MongoDB, Airflow, API, monitoring).</li>
-                                <li><strong>Observabilité&nbsp;:</strong> Prometheus, Grafana et StatsD pour les métriques en temps réel et l'alerting.</li>
-                                <li><strong>Qualité du code&nbsp;:</strong> modules <code>src/ingestion</code>, <code>src/transform</code>, <code>src/utils</code> testables séparément ; Black, Flake8, pytest.</li>
-                                <li><strong>CI/CD et sauvegarde&nbsp;:</strong> GitHub Actions (build, tests, déploiement en staging), sauvegardes mysqldump et mongodump.</li>
+                                <li><strong>Observabilité&nbsp;:</strong> stack Prometheus, Grafana et StatsD pour métriques temps réel et alerting automatique.</li>
+                            </ul>
+
+                            <h4 class="block-title project-block">Qualité et DevOps</h4>
+                            <ul class="arch">
+                                <li><strong>Architecture modulaire&nbsp;:</strong> src/ingestion, src/transform, src/utils. Chaque module est indépendant et testable.</li>
+                                <li><strong>Tests et formatage&nbsp;:</strong> Black, Flake8, pytest avec 87 % de couverture.</li>
+                                <li><strong>CI/CD&nbsp;:</strong> GitHub Actions pour build, tests et déploiement en staging.</li>
+                                <li><strong>Sauvegarde&nbsp;:</strong> scripts automatisés mysqldump et mongodump.</li>
+                                <li><strong>Documentation&nbsp;:</strong> README technique complet, ERD, diagrammes d'architecture, OpenAPI/Swagger.</li>
                             </ul>
                         </div>
                         <aside class="spec" aria-labelledby="spec-showroom">
                             <h4 id="spec-showroom" class="block-title">Résultats mesurés</h4>
-                            <dl>
-                                <div><dt>Avis traités</dt><dd>20 259</dd></div>
-                                <div><dt>F1-score (CamemBERT)</dt><dd>0,92</dd></div>
-                                <div><dt>Latence de l'API</dt><dd>Moins de 200 ms</dd></div>
-                                <div><dt>Couverture de tests</dt><dd>87 % (pytest)</dd></div>
-                                <div><dt>Intégrité de la migration</dt><dd>98,7 %</dd></div>
-                                <div><dt>Temps de traitement manuel</dt><dd>Réduit de 75 %</dd></div>
-                                <div><dt>DAG Airflow</dt><dd>7 tâches</dd></div>
+                            <dl class="metrics">
+                                <div><dt>20 259</dt><dd>avis clients collectés, nettoyés et analysés automatiquement.</dd></div>
+                                <div><dt>75 %</dt><dd>de réduction du temps de traitement manuel grâce à l'automatisation.</dd></div>
+                                <div><dt>0,92</dt><dd>F1-score du modèle d'analyse de sentiments (CamemBERT).</dd></div>
+                                <div><dt>&lt; 200 ms</dt><dd>latence de l'API de prédiction en conditions normales.</dd></div>
+                                <div><dt>87 %</dt><dd>de couverture de tests unitaires (pytest).</dd></div>
+                                <div><dt>7</dt><dd>tâches Airflow orchestrées dans un DAG entièrement automatisé.</dd></div>
                             </dl>
                         </aside>
                     </div>
 
-                    <h4 class="block-title shots-title">Captures du projet</h4>
+                    <h4 class="block-title shots-title">Aperçu du pipeline</h4>
                     <div class="shots">
-                        <button type="button" class="shot wide" aria-label="Agrandir la capture&nbsp;: dashboard satisfaction client">
+                        <button type="button" class="shot wide" aria-label="Agrandir&nbsp;: Dashboard Satisfaction Client">
                             <span class="shot-media">
                                 <img src="https://diakhaby-data.github.io/dashboard.png"
-                                     alt="Dashboard de satisfaction client"
+                                     alt="Dashboard Satisfaction Client"
                                      loading="lazy" decoding="async"
-                                     data-caption="Dashboard de satisfaction client&nbsp;: distribution par étoiles et analyse de sentiment sur 20 259 avis.">
+                                     data-caption="Dashboard Satisfaction Client&nbsp;: distribution par étoiles et analyse de sentiment sur 20 259 avis.">
                             </span>
-                            <span class="shot-caption">Dashboard&nbsp;: distribution des notes et sentiment</span>
+                            <span class="shot-caption">Dashboard Satisfaction Client&nbsp;: distribution et analyse de sentiment</span>
                         </button>
-                        <button type="button" class="shot" aria-label="Agrandir la capture&nbsp;: documentation de l'API FastAPI">
+                        <button type="button" class="shot" aria-label="Agrandir&nbsp;: Documentation API FastAPI">
                             <span class="shot-media">
                                 <img src="https://diakhaby-data.github.io/API.png"
-                                     alt="Documentation Swagger de l'API FastAPI"
+                                     alt="Documentation API FastAPI"
                                      loading="lazy" decoding="async"
-                                     data-caption="API FastAPI&nbsp;: documentation Swagger des endpoints REST (/predict, /stats, health check).">
+                                     data-caption="API FastAPI&nbsp;: documentation Swagger avec endpoints REST (/predict, /stats, health check).">
                             </span>
-                            <span class="shot-caption">FastAPI&nbsp;: documentation Swagger</span>
+                            <span class="shot-caption">API FastAPI&nbsp;: documentation Swagger</span>
                         </button>
-                        <button type="button" class="shot" aria-label="Agrandir la capture&nbsp;: performance du modèle">
+                        <button type="button" class="shot" aria-label="Agrandir&nbsp;: Performance du modèle ML">
                             <span class="shot-media">
                                 <img src="https://diakhaby-data.github.io/Taux%20de%20pr%C3%A9diction.png"
-                                     alt="Comparaison des performances des modèles de sentiment"
+                                     alt="Performance du modèle ML"
                                      loading="lazy" decoding="async"
-                                     data-caption="Performance des modèles&nbsp;: F1-score de 0,92, comparaison TF-IDF, Random Forest, SVM et CamemBERT.">
+                                     data-caption="Performance du modèle ML&nbsp;: F1-score de 0,92 (comparaison TF-IDF, Random Forest, SVM, CamemBERT).">
                             </span>
-                            <span class="shot-caption">Modèles&nbsp;: comparaison des F1-scores</span>
+                            <span class="shot-caption">Modèle ML&nbsp;: F1-score 0,92</span>
                         </button>
-                        <button type="button" class="shot" aria-label="Agrandir la capture&nbsp;: interface Prometheus">
+                        <button type="button" class="shot" aria-label="Agrandir&nbsp;: Interface Prometheus">
                             <span class="shot-media">
                                 <img src="https://diakhaby-data.github.io/prometheus.png"
-                                     alt="Interface Prometheus avec requête PromQL"
+                                     alt="Interface Prometheus"
                                      loading="lazy" decoding="async"
-                                     data-caption="Prometheus&nbsp;: requêtes PromQL et séries temporelles des métriques système.">
+                                     data-caption="Prometheus&nbsp;: requêtage PromQL et graphiques de séries temporelles pour les métriques système en temps réel.">
                             </span>
-                            <span class="shot-caption">Prometheus&nbsp;: requêtes PromQL</span>
+                            <span class="shot-caption">Prometheus&nbsp;: métriques système et PromQL</span>
                         </button>
-                        <button type="button" class="shot" aria-label="Agrandir la capture&nbsp;: dashboard Grafana">
+                        <button type="button" class="shot" aria-label="Agrandir&nbsp;: Dashboard Grafana">
                             <span class="shot-media">
                                 <img src="https://diakhaby-data.github.io/dashboard_grafana.png"
-                                     alt="Dashboard Grafana de monitoring"
+                                     alt="Dashboard Grafana"
                                      loading="lazy" decoding="async"
-                                     data-caption="Grafana&nbsp;: CPU, RAM, erreurs HTTP, latences P50, P95 et P99, distribution des sentiments et satisfaction client en temps réel.">
+                                     data-caption="Dashboard Grafana&nbsp;: CPU, RAM, erreurs HTTP, latences P50/P95/P99, distribution des sentiments et satisfaction client en temps réel.">
                             </span>
-                            <span class="shot-caption">Grafana&nbsp;: monitoring et indicateurs</span>
+                            <span class="shot-caption">Grafana&nbsp;: monitoring complet et KPIs temps réel</span>
                         </button>
                     </div>
 
-                    <p class="stack"><strong>Stack</strong>Python, MySQL, MongoDB, Apache Airflow, FastAPI, scikit-learn, CamemBERT, Docker, Prometheus, Grafana, pytest, GitHub Actions</p>
+                    <h4 class="block-title project-block">Stack technique</h4>
+                    <ul class="tags">
+                        <li>Python</li><li>MySQL</li><li>MongoDB</li><li>FastAPI</li><li>Docker</li><li>GitHub Actions</li><li>Apache Airflow</li>
+                        <li>Prometheus</li><li>Grafana</li><li>scikit-learn</li><li>TF-IDF</li><li>CamemBERT</li><li>pytest</li><li>CI/CD</li>
+                    </ul>
+
+                    <div class="project-actions project-links">
+                        <a class="btn btn-primary" href="https://github.com/Diakhaby-data/Projet_satisfaction" target="_blank" rel="noopener noreferrer">Voir le projet sur GitHub</a>
+                        <a class="btn btn-ghost" href="https://github.com/Diakhaby-data" target="_blank" rel="noopener noreferrer">Tous mes repositories</a>
+                    </div>
                 </article>
 
-                <h3 class="block-title others-title">Autres projets</h3>
+                <h3 class="block-title others-title">Autres Projets</h3>
                 <ul class="others">
                     <li>
-                        <h4>Pipeline de streaming temps réel</h4>
-                        <p class="others-stack">Kafka, Spark Streaming, Cassandra</p>
+                        <h4>Pipeline de Streaming Temps Réel</h4>
+                        <p class="others-stack">Kafka, Spark Streaming et Cassandra</p>
                         <p>
-                            Ingestion et traitement de flux en temps réel avec Apache Kafka et Spark Streaming,
-                            persistance dans Cassandra, supervision Prometheus et Grafana.
+                            Architecture de streaming pour l'ingestion et le traitement temps réel de flux de données avec Apache Kafka.
+                            Intégration avec Spark Streaming, persistance dans Cassandra et monitoring Prometheus/Grafana.
                         </p>
-                        <a class="text-link" href="https://github.com/Diakhaby-data" target="_blank" rel="noopener noreferrer">Profil GitHub</a>
+                        <ul class="tags tags-small"><li>Apache Kafka</li><li>PySpark</li><li>Cassandra</li><li>Prometheus</li><li>Grafana</li></ul>
+                        <a class="text-link" href="https://github.com/Diakhaby-data" target="_blank" rel="noopener noreferrer">GitHub</a>
                     </li>
                     <li>
-                        <h4>Data warehouse Snowflake</h4>
-                        <p class="others-stack">Snowflake, dbt, Airflow</p>
+                        <h4>Data Warehouse Snowflake</h4>
+                        <p class="others-stack">Modélisation dimensionnelle et DBT</p>
                         <p>
-                            Entrepôt de données sur Snowflake en modélisation dimensionnelle, transformations et tests de qualité avec dbt,
-                            orchestration Airflow et documentation générée automatiquement.
+                            Conception d'un entrepôt de données sur Snowflake avec modélisation dimensionnelle.
+                            Transformations et tests de qualité avec DBT, orchestration Airflow et documentation générée automatiquement.
                         </p>
-                        <a class="text-link" href="https://github.com/Diakhaby-data" target="_blank" rel="noopener noreferrer">Profil GitHub</a>
+                        <ul class="tags tags-small"><li>Snowflake</li><li>DBT</li><li>SQL</li><li>Apache Airflow</li></ul>
+                        <a class="text-link" href="https://github.com/Diakhaby-data" target="_blank" rel="noopener noreferrer">GitHub</a>
                     </li>
                     <li>
-                        <h4>Data lake sur AWS</h4>
-                        <p class="others-stack">AWS S3, Docker, GitLab CI</p>
+                        <h4>Data Lake sur AWS</h4>
+                        <p class="others-stack">Infrastructure cloud et CI/CD GitLab</p>
                         <p>
-                            Data lake sur S3 aux formats Parquet et JSON, pipelines d'ingestion automatisés
-                            par intégration continue GitLab.
+                            Déploiement d'un data lake sur AWS avec stockage S3, gestion des formats Parquet et JSON,
+                            et automatisation des pipelines d'ingestion via CI/CD GitLab.
                         </p>
-                        <a class="text-link" href="https://github.com/Diakhaby-data" target="_blank" rel="noopener noreferrer">Profil GitHub</a>
+                        <ul class="tags tags-small"><li>AWS S3</li><li>Python</li><li>Docker</li><li>GitLab CI/CD</li></ul>
+                        <a class="text-link" href="https://github.com/Diakhaby-data" target="_blank" rel="noopener noreferrer">GitHub</a>
                     </li>
                 </ul>
             </div>
@@ -1342,23 +1422,26 @@
             <div class="wrap">
                 <div class="split">
                     <div class="split-head">
-                        <h2 id="titre-contact">Contact</h2>
-                        <p class="section-note">
-                            Pour un poste, une question sur l'un de ces projets ou un échange sur une architecture,
-                            écrivez-moi par email ou sur LinkedIn.
-                        </p>
+                        <h2 id="titre-contact">Me contacter</h2>
+                        <div class="section-note contact-intro">
+                            <p><strong>Disponible immédiatement pour un CDI Data Engineer.</strong></p>
+                            <p>
+                                Je suis ouvert à tout échange sur vos projets data, que ce soit pour discuter d'une opportunité,
+                                d'une architecture ou simplement pour me présenter. N'hésitez pas à me contacter par email ou LinkedIn.
+                            </p>
+                        </div>
                     </div>
                     <ul class="contact-list">
-                        <li><span class="contact-label">Email</span><a href="mailto:diakhaby14@gmail.com">diakhaby14@gmail.com</a></li>
-                        <li><span class="contact-label">LinkedIn</span><a href="https://www.linkedin.com/in/mamadou-diakhaby-879856156/" target="_blank" rel="noopener noreferrer">Mamadou Diakhaby</a></li>
-                        <li><span class="contact-label">GitHub</span><a href="https://github.com/Diakhaby-data" target="_blank" rel="noopener noreferrer">Diakhaby-data</a></li>
-                        <li><span class="contact-label">CV</span><a href="https://diakhaby-data.github.io/CV_Mamadou_Diakhaby_Data_Engineer.pdf" target="_blank" rel="noopener noreferrer" download>Télécharger le CV en PDF</a></li>
+                        <li><a href="mailto:diakhaby14@gmail.com">Email</a></li>
+                        <li><a href="https://www.linkedin.com/in/mamadou-diakhaby-879856156/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://github.com/Diakhaby-data" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="https://diakhaby-data.github.io/CV_Mamadou_Diakhaby_Data_Engineer.pdf" target="_blank" rel="noopener noreferrer" download>Télécharger mon CV</a></li>
                     </ul>
                 </div>
 
                 <footer class="site-footer">
-                    <p>&copy; <span id="year">2026</span> Mamadou Diakhaby, Data Engineer</p>
-                    <p>Paris, Île-de-France</p>
+                    <p>&copy; <span id="year">2026</span> Mamadou DIAKHABY, Data Engineer</p>
+                    <p>Paris, Île-de-France &nbsp;|&nbsp; <a href="mailto:diakhaby14@gmail.com">diakhaby14@gmail.com</a></p>
                 </footer>
             </div>
         </section>
